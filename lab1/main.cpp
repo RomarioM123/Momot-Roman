@@ -1,0 +1,148 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <string.h>
+#define CRTDBG_MAP_ALLOC
+#include <crtdbg.h>
+#define DEBUG_NEW new(_NORMAL_BLOCK, FILE, __LINE)
+
+#include <stdio.h>
+#include <locale.h>	    
+
+class Program {
+private:
+	int TimeOfWork;		//среднее время работы программы
+	int size;			//размер программы
+	int AmountOfLines;	//количество строк кода	
+
+public:
+	int getTime() const
+	{
+		return TimeOfWork;
+	}
+	int getSize() const
+	{
+		return size;
+	}
+	int getLines() const
+	{
+		return AmountOfLines;
+	}
+	void setTime(int valueTime)
+	{
+		TimeOfWork = valueTime;
+	}
+	void setSize(int valueSize)
+	{
+		size = valueSize;
+	}
+	void setLines(int valueLines)
+	{
+		AmountOfLines = valueLines;
+	}
+};
+
+class List {
+private:
+	int ListSize;
+
+public:
+	Program* List;
+
+	void setListSize(int size)
+	{
+		ListSize = size;
+	}
+
+	int getListSize()const
+	{
+		return ListSize;
+	}
+
+	Program* CreateList(int size)
+	{
+		int a = getListSize();
+		List = new Program[a];
+		
+		printf("Введите данные для %i программ\n", a);
+		for (int i = 0; i < size; i++)
+			List[i] = NewProgram();
+		return List;
+	}
+
+	Program NewProgram()
+	{
+		Program NewProgram;
+		int number;
+		printf("Введите данные о новой программе:\n");
+
+		printf("\nВведите среднее время работы программы: ");
+		scanf_s("%i", &number);
+		NewProgram.setTime(number);
+
+		printf("\nВведите размер программы: ");
+		scanf_s("%i", &number);
+		NewProgram.setSize(number);
+
+		printf("\nВведите кол-во строк кода программы: ");
+		scanf_s("%i", &number);
+		NewProgram.setLines(number);
+
+		return NewProgram;
+	}
+
+	bool DeleteEl(int number)
+	{
+		for(int i = 0;i < ListSize; i++)
+		{
+			if (i == number)
+			{
+				for (; i < ListSize - 1; i++)
+				{
+					List[i] = List[i+1];
+				}
+
+				List[ListSize - 1] = 0;
+				List = ListSize - 1;
+
+				return true;
+			}
+		}
+		return false;
+	}
+
+	void PrintAll() const
+	{
+		printf("Время/t/tРазмер/t/tСтроки/t/t");
+		for (int i = 0; i < ListSize; i++)
+			PrintOneEl(i);
+	}
+
+	void PrintOneEl(int number) const
+	{
+		printf("%i) %i %i %i\n", number+1, List[number].getTime(), List[number].getSize(), List[number].getLines());
+	}
+};
+
+int main() 
+{
+	setlocale(LC_ALL, "Rus");   
+	List ProgramList;
+	int a;
+
+	printf("Введите размер массива: ");
+	scanf("%i", &a);
+	if (a <= 0)
+	{
+		printf("Ошибка. Неверный размер массива. Завершение работы программы.");
+		return 0;
+	}
+	ProgramList.setListSize(a);
+
+	ProgramList.CreateList(5);
+	ProgramList.DeleteEl(3);
+	ProgramList.PrintAll();
+
+	if (_CrtDumpMemoryLeaks())
+		printf("\n\nЕсть утечка памяти\n");
+	else
+		printf("\nНет утечки памяти\n");
+}

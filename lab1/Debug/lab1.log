@@ -1,0 +1,6 @@
+﻿  main.cpp
+C:\Users\romar\Desktop\Универ\Программирование\c++\Momot-Roman\lab1\main.cpp(82,20): error C2676: бинарный "==": "Program" не определяет этот оператор или преобразование к типу приемлемо к встроенному оператору
+C:\Users\romar\Desktop\Универ\Программирование\c++\Momot-Roman\lab1\main.cpp(89,14): error C2065: size: необъявленный идентификатор
+C:\Users\romar\Desktop\Универ\Программирование\c++\Momot-Roman\lab1\main.cpp(90,16): error C2065: size: необъявленный идентификатор
+  program.cpp
+  Создание кода...
