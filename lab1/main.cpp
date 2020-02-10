@@ -4,14 +4,14 @@
 #include <crtdbg.h>
 #define DEBUG_NEW new(_NORMAL_BLOCK, FILE, __LINE)
 
-#include <stdio.h>
+#include <stdio.h> 
 #include <locale.h>	    
 
 class Program {
 private:
-	int TimeOfWork;		//среднее время работы программы
-	int size;			//размер программы
-	int AmountOfLines;	//количество строк кода	
+	int TimeOfWork;		//average time of program execution
+	int size;			//size of program
+	int AmountOfLines;	//number of lines in code
 
 public:
 	int getTime() const
@@ -57,36 +57,66 @@ public:
 		return ListSize;
 	}
 
-	bool DeleteEl(int number)
+	Program* AddEl(Program NewProgram)
 	{
-		for(int i = 0;i < ListSize; i++)
-		{
-			if (i == number)
-			{
-				for (; i < ListSize - 1; i++)
-				{
-					List[i] = List[i+1];
-				}
+		int NewListSize = getListSize();
+		NewListSize++;
+		setListSize(NewListSize);
 
-				List[ListSize - 1] = 0;
-				List = ListSize - 1;
+		Program* NewList = new Program[NewListSize];
 
-				return true;
-			}
-		}
-		return false;
+
+		for (int i = 0; i < NewListSize-1; i++)
+			NewList[i] = List[i];
+		NewList[NewListSize - 1] = NewProgram;
+
+		delete [] List;
+		return NewList;
+	}
+	
+	Program* DeleteEl()
+	{
+		int NewListSize = getListSize();
+		NewListSize--;
+		setListSize(NewListSize);
+
+		Program* NewList = new Program[NewListSize+1];
+		
+		for (int i = 0; i <= NewListSize; i++)
+			NewList[i] = List[i];
+
+		delete [] List;
+		return NewList;
 	}
 
 	void PrintAll() const
 	{
-		printf("Время/t/tРазмер/t/tСтроки/t/t");
+		printf("  Время\t\tРазмер\t\tСтроки");
 		for (int i = 0; i < ListSize; i++)
 			PrintOneEl(i);
 	}
 
 	void PrintOneEl(int number) const
 	{
-		printf("%i) %i %i %i\n", number+1, List[number].getTime(), List[number].getSize(), List[number].getLines());
+		printf("\n%2i) %-10i\t %-10i\t %-10i", number+1, List[number].getTime(), List[number].getSize(), List[number].getLines());
+	}
+
+	Program Program1()
+	{
+		Program Program1;
+		Program1.setTime(25326);
+		Program1.setSize(2000);
+		Program1.setLines(500);
+		return Program1;
+	}
+	
+	Program Program2()
+	{
+		Program Program2;
+		Program2.setTime(55555);
+		Program2.setSize(11111);
+		Program2.setLines(22222);
+		return Program2;
 	}
 };
 
@@ -94,14 +124,45 @@ int main()
 {
 	setlocale(LC_ALL, "Rus");   
 	List ProgramList;
-	int a = 2;
+	ProgramList.List = new Program[1];
+	ProgramList.setListSize(0);
+	
 
-	ProgramList.setListSize(a);
+	Program ProgramInfo = ProgramList.Program1();
+	ProgramList.List = ProgramList.AddEl(ProgramInfo);
 
-	ProgramList.CreateList(5);
-	ProgramList.DeleteEl(3);
+	ProgramInfo = ProgramList.Program2();
+	ProgramList.List = ProgramList.AddEl(ProgramInfo);
+
 	ProgramList.PrintAll();
+	
+	//If you want to print only 1 element in console
+	int PrintNumber;
+	printf("\nВведите номер одного элемента, который хотите вывести в консоль: ");
+	scanf_s("%i\n", &PrintNumber);
+	if (PrintNumber <= 0 || PrintNumber > ProgramList.getListSize())
+	{
+		printf("Ошибка. Неверный номер элемента. Завершение работы программы.\n"); 
+		
+		return 0;
+	}
+	PrintNumber++;
+	
+	ProgramList.PrintOneEl(0);
+	
+	//If you want to delete last element
+	int DeleteAction;
+	printf("\nХотите ли вы удалить один последний элемент(0-нет,1-да): ");
+	scanf_s("%i\n", &DeleteAction);
+	if (DeleteAction == 1)
+	{
+		ProgramList.List = ProgramList.DeleteEl();
+		printf("Выводим оставшиеся элементы.\n");
+		ProgramList.PrintAll();
+	}
 
+	printf("\nЗавершение работы.");
+	delete[] ProgramList.List;
 	if (_CrtDumpMemoryLeaks())
 		printf("\n\nЕсть утечка памяти\n");
 	else
