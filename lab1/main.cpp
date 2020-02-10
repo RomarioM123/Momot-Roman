@@ -57,38 +57,6 @@ public:
 		return ListSize;
 	}
 
-	Program* CreateList(int size)
-	{
-		int a = getListSize();
-		List = new Program[a];
-		
-		printf("Введите данные для %i программ\n", a);
-		for (int i = 0; i < size; i++)
-			List[i] = NewProgram();
-		return List;
-	}
-
-	Program NewProgram()
-	{
-		Program NewProgram;
-		int number;
-		printf("Введите данные о новой программе:\n");
-
-		printf("\nВведите среднее время работы программы: ");
-		scanf_s("%i", &number);
-		NewProgram.setTime(number);
-
-		printf("\nВведите размер программы: ");
-		scanf_s("%i", &number);
-		NewProgram.setSize(number);
-
-		printf("\nВведите кол-во строк кода программы: ");
-		scanf_s("%i", &number);
-		NewProgram.setLines(number);
-
-		return NewProgram;
-	}
-
 	bool DeleteEl(int number)
 	{
 		for(int i = 0;i < ListSize; i++)
@@ -126,15 +94,8 @@ int main()
 {
 	setlocale(LC_ALL, "Rus");   
 	List ProgramList;
-	int a;
+	int a = 2;
 
-	printf("Введите размер массива: ");
-	scanf("%i", &a);
-	if (a <= 0)
-	{
-		printf("Ошибка. Неверный размер массива. Завершение работы программы.");
-		return 0;
-	}
 	ProgramList.setListSize(a);
 
 	ProgramList.CreateList(5);
