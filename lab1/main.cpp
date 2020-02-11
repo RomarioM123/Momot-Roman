@@ -1,4 +1,8 @@
-#include "Header.h"
+#include "Program.h"
+#include "List.h"
+#include <iostream>
+
+using namespace std;
 
 int main() 
 {
@@ -19,16 +23,19 @@ int main()
 	//If you want to print only 1 element in console
 	int PrintNumber;
 	printf("\nВведите номер одного элемента, который хотите вывести в консоль: ");
-	scanf_s("%i\n", &PrintNumber);
+	//scanf_s("%i\n", &PrintNumber);
+	cin >> PrintNumber;
+
+	
 	if (PrintNumber <= 0 || PrintNumber > ProgramList.getListSize())
 	{
 		printf("Ошибка. Неверный номер элемента. Завершение работы программы.\n"); 
 		
 		return 0;
 	}
-	PrintNumber++;
+	PrintNumber--;
 	
-	ProgramList.PrintOneEl(0);
+	ProgramList.PrintOneEl(PrintNumber);
 	
 	//If you want to delete last element
 	int DeleteAction;
