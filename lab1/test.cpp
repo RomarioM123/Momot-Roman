@@ -1,73 +1,63 @@
 #include "List.h"
 #include "Program.h"
 
-C_Program* Test_AddEl(C_List, int*);
-C_Program* Test_DelEl(C_List, int*);
+void Test_GetProgramID(C_List, int&);
+
+void Test_AddEl(C_List&, int&);
+void Test_DelEl(C_List&, int&);
 
 int main() {
 	setlocale(LC_ALL, "Rus");
-	C_List ProgramList;
-	ProgramList.List = new C_Program[1];
-	ProgramList.setListSize(0);
 	int count = 0;
+	C_List List;
+	List.setListSize(3);
+	List.CreateList();
 
-	ProgramList.List = Test_AddEl(ProgramList, &count);
-	ProgramList.setListSize(3);
-	ProgramList.List = Test_DelEl(ProgramList, &count);
+	Test_GetProgramID(List, count);
+	Test_AddEl(List, count);
+	Test_DelEl(List, count);
 
+	if (count == 3) printf("Все тесты пройдены.\n");
+	else printf("Не все тесты пройдены.\n");
 
-	if (count == 2) printf("Все тесты выполнены успешно.\n");
-	else printf("Не все тесты выполнены удачно.\n");
+	if (_CrtDumpMemoryLeaks()) printf("Есть утечка памяти.");
+	else printf("Утечка памяти отсутствует.");
 
 	return 0;
 }
-
-C_Program* Test_AddEl(C_List ProgramList, int *count)
+void Test_GetProgramID(C_List list, int& count)
 {
-	C_Program ProgramInfo = ProgramList.Program1();
-	ProgramList.List = ProgramList.AddEl(ProgramInfo);
+	C_Program List = list.GetProgramID(2);
 	
-	ProgramInfo = ProgramList.Program2();
-	ProgramList.List = ProgramList.AddEl(ProgramInfo);
-
-	ProgramInfo = ProgramList.TestProgram3();
-	ProgramList.List = ProgramList.AddEl(ProgramInfo);
-
-	int expected = 3;
-	int real = ProgramList.getListSize();
-	
-	if (expected == real)
+	if (List.getTime() == 25326)
 	{
-		printf("Тест 1 выполнен удачно.\n");
-		(*count)++;
+		printf("Тест нахождения элемента по ID выполнен успешно.\n");
+		count++;
 	}
-	else printf("Тест 1 пройден с ошибкой.\n");
-
-	return ProgramList.List;
+	else printf("Тест нахождения элемента по ID не выполнен успешно.\n");
 }
-C_Program* Test_DelEl(C_List ProgramList, int *count)
+void Test_AddEl(C_List& list, int& count)
 {
-	ProgramList.List = ProgramList.DeleteEl();
-	ProgramList.List = ProgramList.DeleteEl();
+	C_Program newProgram = list.Program2();
+	int size = list.getListSize();
+	list.AddEl(newProgram);
 
-	int expected = 1;
-	int real = ProgramList.getListSize();
-
-	if (expected == real)
+	if (list.List[size - 1].getTime() != list.List[size].getTime() && list.List[size].getTime() == 55555)
 	{
-		printf("Тест 2 выполнен удачно.\n");
-		(*count)++;
+		printf("Тест добавления элемента в список выполнен успешно.\n");
+		count++;
 	}
-	else printf("Тест 2 пройден с ошибкой.\n");
-
-	return ProgramList.List;
+	else printf("Тест добавления элемента в список не выполнен успешно.\n");
 }
-
-C_Program C_List::TestProgram3()
+void Test_DelEl(C_List& list, int& count)
 {
-	C_Program Program3;
-	Program3.setTime(33333);
-	Program3.setSize(33333);
-	Program3.setLines(33333);
-	return Program3;
+	int size = list.getListSize();
+	list.DeleteEl(3);
+	if (size > list.getListSize())
+	{
+		printf("Тест функции удаления выполнен успешно.\n");
+		count++;
+	}
+	else printf("Тест функции удаления не выполнен успешно.\n");
 }
+

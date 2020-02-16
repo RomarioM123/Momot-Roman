@@ -4,7 +4,6 @@
 int main() 
 {
 	setlocale(LC_ALL, "Rus");   
-	C_Program Program;
 	
 	Menu();
 
@@ -27,7 +26,7 @@ void Menu()
 	{
 		printf("\n1)Вывести всё на экран\n2)Вывести 1 элемент на экран\n");
 		printf("3)Добавить элемент(в конец)\n4)Удалить 1 элемент\n5)Завершение работы\n");
-		printf("=============================\nВаш выбор: ");
+		printf("6)Найти программу по индексу\n=============================\nВаш выбор: ");
 		scanf("%i", &choise);
 		
 		switch (choise)
@@ -51,6 +50,11 @@ void Menu()
 		case 5:
 			printf("Завершение работы.\n");
 			choise = 0;
+			break;
+		case 6:
+			printf("Введите id элемента, которого вы хотите получить: ");
+			scanf("%i", &value);
+			getProgram = List.GetProgramID(value-1);
 			break;
 		default:
 			printf("Неверный символ. Повторите попытку.\n");

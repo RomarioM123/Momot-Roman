@@ -15,8 +15,8 @@ public:
 	void AddEl(C_Program&);
 	void DeleteEl(int);
 	void FreeMemory();
-	
+	C_Program GetProgramID(int)const;
+
 	C_Program Program1();
 	C_Program Program2();
-	C_Program TestProgram3();
 };

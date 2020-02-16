@@ -74,6 +74,11 @@ void C_List::FreeMemory()
 {
 	delete[] List;
 }
+C_Program C_List::GetProgramID(int id) const
+{
+	C_Program temp = List[id];
+	return temp;
+}
 
 C_Program C_List::Program1()
 {
