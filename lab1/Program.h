@@ -6,7 +6,9 @@
 #define DEBUG_NEW new(_NORMAL_BLOCK, FILE, __LINE)
 
 #include <stdio.h> 
-#include <locale.h>	    
+#include <locale.h>	   
+
+void Menu();
 
 class C_Program {
 private:
@@ -18,9 +20,9 @@ public:
 	int getTime() const;
 	int getSize() const;
 	int getLines() const;
-	void setTime(int);
-	void setSize(int);
-	void setLines(int);
+	void setTime(const int);
+	void setSize(const int);
+	void setLines(const int);
 };
 
 

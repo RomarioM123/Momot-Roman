@@ -4,49 +4,59 @@
 int main() 
 {
 	setlocale(LC_ALL, "Rus");   
-	C_List ProgramList;
-	ProgramList.List = new C_Program[1];
-	ProgramList.setListSize(0);
+	C_Program Program;
 	
+	Menu();
 
-	C_Program ProgramInfo = ProgramList.Program1();
-	ProgramList.List = ProgramList.AddEl(ProgramInfo);
+	if (_CrtDumpMemoryLeaks()) printf("Есть утечка памяти.\n");
+	else printf("Нет утечки памяти.\n");
 
-	ProgramInfo = ProgramList.Program2();
-	ProgramList.List = ProgramList.AddEl(ProgramInfo);
+	return 0;
+}
 
-	ProgramList.PrintAll();
-	
-	//If you want to print only 1 element in console
-	int PrintNumber;
-	printf("\nВведите номер одного элемента, который хотите вывести в консоль: ");
-	scanf("%i\n", &PrintNumber, 1);
-	
-	if (PrintNumber <= 0 || PrintNumber > ProgramList.getListSize())
+void Menu()
+{
+	C_List List;
+	C_Program getProgram;
+	C_Program newProgram = List.Program2();
+	int choise = 1, value = 0;
+	List.setListSize(3);
+	List.CreateList();
+	printf("Выберите команду для работы со списком:\n");
+	while (choise != 0)
 	{
-		printf("Ошибка. Неверный номер элемента. Завершение работы программы.\n"); 
+		printf("\n1)Вывести всё на экран\n2)Вывести 1 элемент на экран\n");
+		printf("3)Добавить элемент(в конец)\n4)Удалить 1 элемент\n5)Завершение работы\n");
+		printf("=============================\nВаш выбор: ");
+		scanf("%i", &choise);
 		
-		return 0;
+		switch (choise)
+		{
+		case 1:
+			List.PrintAll();
+			break;
+		case 2:
+			printf("Введите номер элемента, который надо вывести: ");
+			scanf("%i", &value);
+			List.PrintOneEl(value - 1);
+			break;
+		case 3:
+			List.AddEl(newProgram);
+			break;
+		case 4:
+			printf("Введите номер элемента, который хотите удалить: ");
+			scanf("%i", &value);
+			List.DeleteEl(value);
+			break;
+		case 5:
+			printf("Завершение работы.\n");
+			choise = 0;
+			break;
+		default:
+			printf("Неверный символ. Повторите попытку.\n");
+			break;
+		}
 	}
-	PrintNumber--;
-	
-	ProgramList.PrintOneEl(PrintNumber);
-	
-	//If you want to delete last element
-	int DeleteAction;
-	printf("\nХотите ли вы удалить один последний элемент(0-нет,1-да): ");
-	scanf("%i\n", &DeleteAction, 1);
-	if (DeleteAction == 1)
-	{
-		ProgramList.List = ProgramList.DeleteEl();
-		printf("Выводим оставшиеся элементы.\n");
-		ProgramList.PrintAll();
-	}
-
-	printf("\nЗавершение работы.");
-	delete[] ProgramList.List;
-	if (_CrtDumpMemoryLeaks())
-		printf("\n\nЕсть утечка памяти.\n");
-	else
-		printf("\nНет утечки памяти.\n");
+	List.FreeMemory();
+	return;
 }
