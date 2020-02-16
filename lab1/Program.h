@@ -8,7 +8,7 @@
 #include <stdio.h> 
 #include <locale.h>	    
 
-class Program {
+class C_Program {
 private:
 	int TimeOfWork;		//average time of program execution
 	int size;			//size of program

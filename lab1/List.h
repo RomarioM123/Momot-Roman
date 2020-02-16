@@ -1,19 +1,21 @@
 #pragma once
 
 #include "Program.h"
-class List {
+class C_List {
 private:
 	int ListSize;
 
 public:
-	Program* List;
+	C_Program* List;
 
 	void setListSize(int);
 	int getListSize() const;
-	Program* AddEl(Program);
-	Program* DeleteEl();
+	C_Program* AddEl(C_Program);
+	C_Program* DeleteEl();
 	void PrintAll() const;
 	void PrintOneEl(int) const;
-	Program Program1();
-	Program Program2();
+	C_Program Program1();
+	C_Program Program2();
+
+	C_Program TestProgram3();
 };

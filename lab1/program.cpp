@@ -1,27 +1,27 @@
 #include "Program.h"
 #include "List.h"
 
-int Program::getTime() const
+int C_Program::getTime() const
 {
 	return TimeOfWork;
 }
-int Program::getSize() const
+int C_Program::getSize() const
 {
 	return size;
 }
-int Program::getLines() const
+int C_Program::getLines() const
 {
 	return AmountOfLines;
 }
-void Program::setTime(int valueTime)
+void C_Program::setTime(int valueTime)
 {
 	TimeOfWork = valueTime;
 }
-void Program::setSize(int valueSize)
+void C_Program::setSize(int valueSize)
 {
 	size = valueSize;
 }
-void Program::setLines(int valueLines)
+void C_Program::setLines(int valueLines)
 {
 	AmountOfLines = valueLines;
 }
