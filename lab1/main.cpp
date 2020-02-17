@@ -4,7 +4,6 @@
 int main() 
 {
 	setlocale(LC_ALL, "Rus");   
-	
 	Menu();
 
 	if (_CrtDumpMemoryLeaks()) printf("Есть утечка памяти.\n");
