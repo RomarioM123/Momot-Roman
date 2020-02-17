@@ -17,7 +17,7 @@ int C_List::getListSize() const
 }
 void C_List::PrintAll() const
 {
-	printf("  Время\t\tРазмер\t\tСтроки");
+	printf("  \nВремя\t\tРазмер\t\tСтроки");
 	for (int i = 0; i < listSize; i++)
 		PrintOneEl(i);
 }
