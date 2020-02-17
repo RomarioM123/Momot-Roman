@@ -59,7 +59,7 @@ void C_List::DeleteEl(int index)
 
 	for (int i = 0; i < index - 1; i++)
 		newList[i] = List[i];
-	for (int i = index - 1, j = index; i < listSize; i++, j++)
+	for (int i = index - 1, j = index; j < listSize; i++, j++)
 		newList[i] = List[j];
 	delete[] List;
 
