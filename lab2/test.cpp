@@ -9,8 +9,7 @@ int main() {
 	setlocale(LC_ALL, "Rus");
 	int count = 0;
 	C_List List;
-	List.setListSize(3);
-	List.CreateList();
+	List.CreateList(3);
 
 	Test_GetProgramID(List, count);
 	Test_AddEl(List, count);
@@ -19,7 +18,6 @@ int main() {
 	if (count == 3) printf("\nВсе тесты пройдены.\n");
 	else printf("\nНе все тесты пройдены.\n");
 
-	List.FreeMemory();
 	if (_CrtDumpMemoryLeaks()) printf("Есть утечка памяти.");
 	else printf("Утечка памяти отсутствует.");
 
@@ -38,7 +36,7 @@ void Test_GetProgramID(C_List list, int& count)
 }
 void Test_AddEl(C_List& list, int& count)
 {
-	C_Program newProgram = list.Program2();
+	C_Program newProgram = list.Programs(4);
 	int size = list.getListSize();
 	list.AddEl(newProgram);
 

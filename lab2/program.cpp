@@ -12,15 +12,52 @@ int C_Program::getLines() const
 {
 	return AmountOfLines;
 }
-void C_Program::setTime(int valueTime)
+const char* C_Program::getTrojan()const
+{
+	return trojan;
+}
+void C_Program::setTime(const int valueTime)
 {
 	TimeOfWork = valueTime;
 }
-void C_Program::setSize(int valueSize)
+void C_Program::setSize(const int valueSize)
 {
 	size = valueSize;
 }
-void C_Program::setLines(int valueLines)
+void C_Program::setLines(const int valueLines)
 {
 	AmountOfLines = valueLines;
+}
+void C_Program::setTrojan(const char* trojanStatus)
+{
+	trojan = trojanStatus;
+}
+
+C_Program::C_Program(char* trojan, int time, int size, int lines)
+{
+	printf("\nВызвался конструктор с параметрами");
+	this->trojan = trojan;
+	TimeOfWork = time;
+	this->size = size;
+	AmountOfLines = lines;
+}
+C_Program::C_Program()		//конструктор по умолчанию
+{
+	printf("\nВызвался конструктор по умолчанию.");
+	trojan = "Да";
+	TimeOfWork = 0000;
+	size = 0000;
+	AmountOfLines = 0000;
+}
+C_Program::~C_Program()	//деструктор
+{
+	printf("\nВызвался деструктор");
+}
+C_Program::C_Program(const C_Program& other)	//конструктор копирования
+{
+	printf("\nВызвался конструктор копирования.");
+	this->trojan = other.trojan;
+	this->TimeOfWork = other.TimeOfWork;
+	this->size = other.size;
+	this->AmountOfLines = other.AmountOfLines;
 }
