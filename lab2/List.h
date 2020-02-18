@@ -15,7 +15,7 @@ public:
 	void AddEl(C_Program&);
 	void DeleteEl(int);
 	void Task(int);
-	C_Program GetProgramID(int)const;
+	void GetProgramID(int)const;
 	C_Program Programs(int);
 	~C_List();
 };

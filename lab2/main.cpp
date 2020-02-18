@@ -15,7 +15,6 @@ int main()
 void Menu()
 {
 	C_List List;
-	C_Program getProgram;
 	C_Program newProgram;
 	int choise = 1, value = 0, stop = 1;
 	List.CreateList(4);
@@ -35,7 +34,7 @@ void Menu()
 		{
 			printf("\n\n1)Вывести всё на экран\n2)Вывести 1 элемент на экран\n");
 			printf("3)Добавить элемент(в конец)\n4)Удалить 1 элемент\n5)Завершение работы\n");
-			printf("6)Вывести в консоль программу по индексу\n7)Получить список программ меньше ");
+			printf("6)Вывести программы по индексу\n7)Получить список программ больше ");
 			printf("определённого размера и не трояны\n=============================\nВаш выбор: ");
 			scanf("%i", &choise);
 		}
@@ -68,9 +67,9 @@ void Menu()
 			stop = 0;
 			break;
 		case 6:
-			printf("Введите id элемента, которого вы хотите получить: ");
+			printf("Введите индекс элемента, которого вы хотите получить: ");
 			scanf("%i", &value);
-			getProgram = List.GetProgramID(value-1);
+			List.GetProgramID(value);
 			break;
 		case 7:
 			printf("Введите минимальный размер программ: ");
