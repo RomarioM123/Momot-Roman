@@ -1,61 +1,55 @@
-#include "List.h"
 #include "Program.h"
+#include "List.h"
 
-void Test_GetProgramID(C_List, int&);
-void Test_AddEl(C_List&, int&);
-void Test_DelEl(C_List&, int&);
+void Test_GetProgramID(C_List&, int&);
+void Test_AddEl(C_List&);
+void Test_DelEl(C_List&);
+void Test_Task(C_List&, int&);
 
 int main() {
-	setlocale(LC_ALL, "Rus");
-	int count = 0;
-	C_List List;
-	List.CreateList(3);
+    setlocale(LC_ALL, "Rus");
+    C_List List;
+    List.CreateList(5);
 
-	Test_GetProgramID(List, count);
-	Test_AddEl(List, count);
-	Test_DelEl(List, count);
+    int values[] = { 5678, 200 };
 
-	if (count == 3) printf("\nВсе тесты пройдены.\n");
-	else printf("\nНе все тесты пройдены.\n");
+    Test_GetProgramID(List, values[0]);
+    Test_AddEl(List);
+    Test_DelEl(List);
+    List.PrintAll();
+    Test_Task(List, values[1]);
 
-	if (_CrtDumpMemoryLeaks()) printf("Есть утечка памяти.");
-	else printf("Утечка памяти отсутствует.");
+    if (_CrtDumpMemoryLeaks()) printf("\n\nЕсть утечка памяти.\n\n");
+    else printf("\n\nУтечка памяти отсутствует\n\n.");
 
-	return 0;
+    return 0;
 }
-void Test_GetProgramID(C_List list, int& count)
+void Test_GetProgramID(C_List& list, int& value)
 {
-	C_Program List = list.GetProgramID(2);
-	
-	if (List.getTime() == 25326)
-	{
-		printf("Тест нахождения элемента по ID\t\t выполнен успешно.\n");
-		count++;
-	}
-	else printf("Тест нахождения элемента по ID\t\t не выполнен успешно.\n");
+    printf("\n\nЗдесь должен быть элемент с идентификатором 5678:\n");
+    list.GetProgramID(value);
 }
-void Test_AddEl(C_List& list, int& count)
+void Test_AddEl(C_List& list)
 {
-	C_Program newProgram = list.Programs(4);
-	int size = list.getListSize();
-	list.AddEl(newProgram);
+    C_Program newProgram;
+    int size = list.getListSize();
+    list.AddEl(newProgram);
 
-	if (list.List[size-1].getTime() != list.List[size].getTime() && list.List[size].getTime() == 55555)
-	{
-		printf("Тест добавления элемента в список\t выполнен успешно.\n");
-		count++;
-	}
-	else printf("Тест добавления элемента в список\t не выполнен успешно.\n");
+    if (list.getListSize() > size)
+        printf("\n\nТест добавления элемента в список\t выполнен успешно.\n\n");
+    else printf("\n\nТест добавления элемента в список\t не выполнен успешно.\n\n");
 }
-void Test_DelEl(C_List& list, int& count)
+void Test_DelEl(C_List& list)
 {
-	int size = list.getListSize();
-	list.DeleteEl(3);
-	if (size > list.getListSize())
-	{
-		printf("Тест функции удаления\t\t\t выполнен успешно.\n");
-		count++;
-	}
-	else printf("Тест функции удаления\t\t\t не выполнен успешно.\n");
-}
+    int size = list.getListSize();
+    list.DeleteEl(3);
 
+    if (size > list.getListSize())
+        printf("\n\nТест функции удаления\t\t выполнен успешно.\n\n");
+    else printf("\n\nТест функции удаления\t\t не выполнен успешно.\n\n");
+}
+void Test_Task(C_List& list, int& value)
+{
+    printf("\n\nЗдесь должны быть элементы размером больше 200 и не трояны:\n");
+    list.Task(value);
+}

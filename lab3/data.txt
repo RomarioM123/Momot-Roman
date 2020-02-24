@@ -1,0 +1,3 @@
+Chess 256 7777 24 666 true 
+Notepad++ 14212 222 333 444 false 
+Chrome 666 666 666 666 false 
