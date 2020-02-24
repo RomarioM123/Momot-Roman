@@ -15,14 +15,17 @@ private:
 	int TimeOfWork;		//average time of program execution
 	int size;			//size of program
 	int AmountOfLines;	//number of lines in code
-
+	int index;			//index
 public:
 	int getTime() const;
 	int getSize() const;
 	int getLines() const;
+	int getIndex() const;
+
 	void setTime(const int);
 	void setSize(const int);
 	void setLines(const int);
+	void setIndex(const int);
 };
 
 

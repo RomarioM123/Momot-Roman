@@ -17,13 +17,14 @@ int C_List::getListSize() const
 }
 void C_List::PrintAll() const
 {
-	printf("  \nВремя\t\tРазмер\t\tСтроки");
+	printf("  \nВремя\t\tРазмер\t\tСтроки\t\tИндекс");
 	for (int i = 0; i < listSize; i++)
 		PrintOneEl(i);
 }
 void C_List::PrintOneEl(int number) const
 {
-	printf("\n%2i) %-10i\t %-10i\t %-10i", number + 1, List[number].getTime(), List[number].getSize(), List[number].getLines());
+	printf("\n%2i) %-10i\t %-10i\t ", number + 1, List[number].getTime(), List[number].getSize());
+	printf("%-10i\t %-10i", List[number].getLines(), List[number].getIndex());
 }
 void C_List::AddEl(C_Program& newProgram)
 {
@@ -74,10 +75,17 @@ void C_List::FreeMemory()
 {
 	delete[] List;
 }
-C_Program C_List::GetProgramID(int id) const
+void C_List::GetProgramID(int id) const
 {
-	C_Program temp = List[id];
-	return temp;
+	int newListSize = 0;
+
+	for (int i = 0; i < listSize; i++)
+		if (List[i].getIndex() == id)
+		{
+			PrintOneEl(i);
+			newListSize++;
+		}
+
 }
 
 C_Program C_List::Program1()
@@ -86,6 +94,7 @@ C_Program C_List::Program1()
 	Program1.setTime(25326);
 	Program1.setSize(2000);
 	Program1.setLines(500);
+	Program1.setIndex(123);
 	return Program1;
 }
 C_Program C_List::Program2()
@@ -94,5 +103,6 @@ C_Program C_List::Program2()
 	Program2.setTime(55555);
 	Program2.setSize(11111);
 	Program2.setLines(22222);
+	Program2.setIndex(1234);
 	return Program2;
 }

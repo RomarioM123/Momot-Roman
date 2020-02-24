@@ -15,7 +15,6 @@ int main()
 void Menu()
 {
 	C_List List;
-	C_Program getProgram;
 	C_Program newProgram = List.Program2();
 	int choise = 1, value = 0;
 	List.setListSize(3);
@@ -51,9 +50,9 @@ void Menu()
 			choise = 0;
 			break;
 		case 6:
-			printf("Введите id элемента, которого вы хотите получить: ");
+			printf("Введите индекс элемента, которого вы хотите получить: ");
 			scanf("%i", &value);
-			getProgram = List.GetProgramID(value-1);
+			List.GetProgramID(value);
 			break;
 		default:
 			printf("Неверный символ. Повторите попытку.\n");
