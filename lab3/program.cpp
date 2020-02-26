@@ -50,37 +50,19 @@ void C_Program::setName(string valueName)
 	name = valueName;
 }
 
-C_Program::C_Program(bool trojan, int time, int size, int lines, int index, string name)
+C_Program::C_Program(bool trojan, int time, int size, int lines, int index, string name) : trojan(trojan), timeOfWork(time), size(size), amountOfLines(lines), index(index), name(name)
 {
-	cout << "Вызвался конструктор с параметрами." << endl;
-	this->trojan = trojan;
-	timeOfWork = time;
-	this->size = size;
-	this->index = index;
-	amountOfLines = lines;
-	this->name = name;
+	cout << "\nВызвался конструктор с параметрами";
 }
-C_Program::C_Program()    //конструктор по умолчанию
+C_Program::C_Program() : trojan(true), timeOfWork(0), size(0), amountOfLines(0), index(0101), name("Basic")
 {
-	cout << "Вызвался конструктор по умолчанию." << endl;
-	trojan = true;
-	timeOfWork = 0000;
-	size = 0000;
-	index = 0000;
-	amountOfLines = 0000;
-	name = "Калькулятор";
+	cout << "\nВызвался конструктор по умолчанию.";
+}
+C_Program::C_Program(const C_Program& other) : trojan(other.trojan), timeOfWork(other.timeOfWork), size(other.size), amountOfLines(other.amountOfLines), index(other.index), name(other.name)
+{
+	cout << "\nВызвался конструктор копирования.";
 }
 C_Program::~C_Program()  //деструктор
 {
-	cout << "Вызвался деструктор." << endl;
-}
-C_Program::C_Program(const C_Program& other)  //конструктор копирования
-{
-	cout << "Вызвался конструктор копирования." << endl;
-	this->trojan = other.trojan;
-	this->timeOfWork = other.timeOfWork;
-	this->size = other.size;
-	this->amountOfLines = other.amountOfLines;
-	this->index = other.index;
-	this->name = other.name;
+	cout << "\nВызвался деструктор";
 }

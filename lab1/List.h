@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Program.h"
-class C_List {
+class CList {
 private:
 	int listSize;
 

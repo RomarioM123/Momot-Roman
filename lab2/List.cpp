@@ -1,6 +1,6 @@
 #include "List.h"
 
-void C_List::CreateList(int value)
+void CList::CreateList(int value)
 {
     listSize = value;
     List = new C_Program[listSize];
@@ -8,37 +8,26 @@ void C_List::CreateList(int value)
     for (int i = 0; i < listSize; i++)
         List[i] = Programs(i);
 }
-void C_List::setListSize(int size)
+void CList::setListSize(int size)
 {
     listSize = size;
 }
-int C_List::getListSize() const
+int CList::getListSize() const
 {
     return listSize;
 }
-void C_List::PrintAll() const
+void CList::PrintAll() const
 {
-<<<<<<< HEAD
     printf("  \nВремя\t\tРазмер\t\tСтроки\t\tИндекс\t\tТроян");
     for (int i = 0; i < listSize; i++)
         PrintOneEl(i);
 }
-void C_List::PrintOneEl(int number) const
+void CList::PrintOneEl(int number) const
 {
     printf("\n%2i) %-10i\t %-10i\t ", number + 1, List[number].getTime(), List[number].getSize());
     printf("%-10i\t %-10i\t %-10s", List[number].getLines(), List[number].getIndex(), List[number].getTrojan());
-=======
-	printf("  \nВремя\t\tРазмер\t\tСтроки\t\tИндекс\t\tТроян");
-	for (int i = 0; i < listSize; i++)
-		PrintOneEl(i);
 }
-void C_List::PrintOneEl(int number) const
-{
-	printf("\n%2i) %-10i\t %-10i\t ", number + 1, List[number].getTime(), List[number].getSize());
-	printf("%-10i\t %-10i\t %-10s", List[number].getLines(), List[number].getIndex(), List[number].getTrojan());
->>>>>>> 042bc953d2b5e7240b67c16e27875c0f044d9563
-}
-void C_List::AddEl(C_Program& newProgram)
+void CList::AddEl(C_Program& newProgram)
 {
     C_Program* newList = new C_Program[listSize + 1];
 
@@ -47,19 +36,14 @@ void C_List::AddEl(C_Program& newProgram)
     newList[listSize++] = newProgram;
     delete[] List;
 
-<<<<<<< HEAD
     List = new C_Program[listSize];
     for (int i = 0; i < listSize; i++)
         List[i] = newList[i];
 
     printf("Элемент добавлен.\n");
-
     delete[] newList;
-=======
-	printf("Элемент добавлен.\n");
->>>>>>> 042bc953d2b5e7240b67c16e27875c0f044d9563
 }
-void C_List::DeleteEl(int index)
+void CList::DeleteEl(int index)
 {
     if (listSize == 0)
     {
@@ -87,42 +71,15 @@ void C_List::DeleteEl(int index)
 
     return;
 }
-void C_List::Task(int minimalSize)
+void CList::Task(int minimalSize)
 {
-<<<<<<< HEAD
     char b[] = "Нет";
     for (int i = 0; i < listSize; i++)
         if (List[i].getSize() > minimalSize&& strcmp(List[i].getTrojan(), b) == 0)
             PrintOneEl(i);
 
 }
-void C_List::GetProgramID(int id) const
-{
-    int newListSize = 0;
-
-    for (int i = 0; i < listSize; i++)
-        if (List[i].getIndex() == id)
-        {
-            PrintOneEl(i);
-            newListSize++;
-        }
-=======
-	C_Program* newList = new C_Program[listSize];
-	
-	char b[] = "Нет";
-	for (int i = 0; i < listSize; i++)
-	{
-		if (List[i].getSize() > minimalSize && strcmp(List[i].getTrojan(), b) == 0)
-		{
-			newList[i] = List[i];
-			PrintOneEl(i);
-		}
-	}
-	delete[] newList;
-	//Я не понял формулировку "получить список". Я решил и вывести в консоль, и записать в переменную
-	//Да, выделение переменной, запись и сразу же очистка по сути не логична. Но я решил продумать все варианты
-}
-void C_List::GetProgramID(int id) const
+void CList::GetProgramID(int id) const
 {	
 	int newListSize = 0;
 
@@ -132,13 +89,11 @@ void C_List::GetProgramID(int id) const
 			PrintOneEl(i);
 			newListSize++;
 		}
->>>>>>> 042bc953d2b5e7240b67c16e27875c0f044d9563
 }
-C_Program C_List::Programs(int valueX)
+C_Program CList::Programs(int valueX)
 {
     C_Program standartProgram;
 
-<<<<<<< HEAD
     if (valueX == 1)
     {
         static char status[] = "Да";
@@ -164,35 +119,8 @@ C_Program C_List::Programs(int valueX)
         return Program4;
     }
     return standartProgram;
-=======
-	if (valueX == 1)
-	{
-		static char status[] = "Да";
-		C_Program Program1(status, 222, 222, 222, 1234);
-		return Program1;
-	}
-	else if (valueX == 2)
-	{
-		static char status[] = "Да";
-		C_Program Program2(status, 333, 333, 666, 5678);
-		return Program2;
-	}
-	else if (valueX == 3)
-	{
-		static char status[] = "Нет";
-		C_Program Program3(status, 444, 444, 444, 9532);
-		return Program3;
-	}
-	else if (valueX == 4)
-	{
-		static char status[] = "Нет";
-		C_Program Program4(status, 555, 555, 555, 4356);
-		return Program4;
-	}
-	return standartProgram;
->>>>>>> 042bc953d2b5e7240b67c16e27875c0f044d9563
 }
-C_List::~C_List()
+CList::~CList()
 {
     printf("\nВызвался деструктор");
     delete[] List;

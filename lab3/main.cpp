@@ -16,12 +16,13 @@ int main()
 
 void Menu()
 {
-	C_List list;
+	CList list;
 	C_Program getProgram;		//программа, которая вернётся при получении ID
 	C_Program newProgram;		//программа для добавления в список
 	int choise = 1, value = 0, stop = 1;
 	string fileName;			//переменная для названия файла
-	string::size_type n;		
+	string::size_type n;
+	stringstream str;
 	list.CreateList(4);
 	cout << endl << "Выберите команду для работы со списком: " << endl;
 
@@ -49,6 +50,7 @@ void Menu()
 			cout << "7)Получить данные из файла" << endl;
 			cout << "8)Записать данные в файл" << endl;
 			cout << "9)Завершение работы" << endl;
+			cout << "10)Получить элемент класса из строки" << endl;
 			cout << "=============================" << endl << "Ваш выбор: ";
 			cin >> choise;
 			cout << endl;
@@ -118,6 +120,14 @@ void Menu()
 		case 9:
 			cout << "Завершение работы." << endl;
 			stop = 0;
+			break;
+		case 10:
+			cout << "Введите номер элемента, который вы хотите получить: ";
+			cin >> value;
+			cout << endl;
+
+			str = list.GetOneEl(value-1);
+			list.showOneEl(str);
 			break;
 		default:
 			cout << "Неверный символ. Повторите попытку." << endl;

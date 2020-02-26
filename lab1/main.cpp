@@ -14,7 +14,7 @@ int main()
 
 void Menu()
 {
-	C_List List;
+	CList List;
 	C_Program newProgram = List.Program2();
 	int choise = 1, value = 0;
 	List.setListSize(3);
