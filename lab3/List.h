@@ -1,7 +1,7 @@
 #pragma once
 #include "Program.h"
 
-class C_List {
+class CList {
 private:
 	int listSize;
 
@@ -20,8 +20,9 @@ public:
 	void ReadFile(string);
 	void SaveToFile(string);
 	stringstream GetOneEl(int) const;
+	void showOneEl(stringstream&) const;
 
 	C_Program GetProgramID(int)const;
 	C_Program Programs(int);
-	~C_List();
+	~CList();
 };

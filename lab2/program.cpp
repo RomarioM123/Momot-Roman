@@ -16,10 +16,7 @@ int C_Program::getIndex() const
 {
     return index;
 }
-int C_Program::getIndex() const
-{
-	return index;
-}
+
 const char* C_Program::getTrojan()const
 {
     return trojan;
@@ -44,66 +41,20 @@ void C_Program::setIndex(int valueIndex)
 {
     index = valueIndex;
 }
-void C_Program::setIndex(int valueIndex)
-{
-	index = valueIndex;
-}
 
-C_Program::C_Program(char* trojan, int time, int size, int lines, int index)
+C_Program::C_Program(char* trojan, int time, int size, int lines, int index) : trojan(trojan), TimeOfWork(time), size(size), AmountOfLines(lines), index(index)
 {
-<<<<<<< HEAD
     printf("\nВызвался конструктор с параметрами");
-    this->trojan = trojan;
-    TimeOfWork = time;
-    this->size = size;
-    this->index = index;
-    AmountOfLines = lines;
-=======
-	printf("\nВызвался конструктор с параметрами");
-	this->trojan = trojan;
-	TimeOfWork = time;
-	this->size = size;
-	this->index = index;
-	AmountOfLines = lines;
->>>>>>> 042bc953d2b5e7240b67c16e27875c0f044d9563
 }
-C_Program::C_Program()    //конструктор по умолчанию
+C_Program::C_Program() : trojan("Да"), TimeOfWork(0), size(0), AmountOfLines(0), index(0101)
 {
-<<<<<<< HEAD
     printf("\nВызвался конструктор по умолчанию.");
-    trojan = "Да";
-    TimeOfWork = 0000;
-    size = 0000;
-    index = 0000;
-    AmountOfLines = 0000;
-=======
-	printf("\nВызвался конструктор по умолчанию.");
-	trojan = "Да";
-	TimeOfWork = 0000;
-	size = 0000;
-	index = 0000;
-	AmountOfLines = 0000;
->>>>>>> 042bc953d2b5e7240b67c16e27875c0f044d9563
+}
+C_Program::C_Program(const C_Program& other) : trojan(other.trojan), TimeOfWork(other.TimeOfWork), size(other.size), AmountOfLines(other.AmountOfLines), index(other.index)
+{
+    printf("\nВызвался конструктор копирования.");
 }
 C_Program::~C_Program()  //деструктор
 {
     printf("\nВызвался деструктор");
-}
-C_Program::C_Program(const C_Program& other)  //конструктор копирования
-{
-<<<<<<< HEAD
-    printf("\nВызвался конструктор копирования.");
-    this->trojan = other.trojan;
-    this->TimeOfWork = other.TimeOfWork;
-    this->size = other.size;
-    this->AmountOfLines = other.AmountOfLines;
-    this->index = other.index;
-=======
-	printf("\nВызвался конструктор копирования.");
-	this->trojan = other.trojan;
-	this->TimeOfWork = other.TimeOfWork;
-	this->size = other.size;
-	this->AmountOfLines = other.AmountOfLines;
-	this->index = other.index;
->>>>>>> 042bc953d2b5e7240b67c16e27875c0f044d9563
 }

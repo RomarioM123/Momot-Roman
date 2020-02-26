@@ -1,32 +1,32 @@
 #include "List.h"
 
-void C_List::CreateList()
+void CList::CreateList()
 {
 	List = new C_Program[listSize];
 
 	for (int i = 0; i < listSize; i++)
 		List[i] = Program1();
 }
-void C_List::setListSize(int size)
+void CList::setListSize(int size)
 {
 	listSize = size;
 }
-int C_List::getListSize() const
+int CList::getListSize() const
 {
 	return listSize;
 }
-void C_List::PrintAll() const
+void CList::PrintAll() const
 {
 	printf("  \nВремя\t\tРазмер\t\tСтроки\t\tИндекс");
 	for (int i = 0; i < listSize; i++)
 		PrintOneEl(i);
 }
-void C_List::PrintOneEl(int number) const
+void CList::PrintOneEl(int number) const
 {
 	printf("\n%2i) %-10i\t %-10i\t ", number + 1, List[number].getTime(), List[number].getSize());
 	printf("%-10i\t %-10i", List[number].getLines(), List[number].getIndex());
 }
-void C_List::AddEl(C_Program& newProgram)
+void CList::AddEl(C_Program& newProgram)
 {
 	newProgram = Program2();
 	C_Program* newList = new C_Program[listSize+1];
@@ -43,7 +43,7 @@ void C_List::AddEl(C_Program& newProgram)
 	delete[] newList;
 	printf("Элемент добавлен.\n");
 }
-void C_List::DeleteEl(int index)
+void CList::DeleteEl(int index)
 {
 	if (listSize == 0)
 	{
@@ -71,11 +71,11 @@ void C_List::DeleteEl(int index)
 
 	return;
 }
-void C_List::FreeMemory()
+void CList::FreeMemory()
 {
 	delete[] List;
 }
-void C_List::GetProgramID(int id) const
+void CList::GetProgramID(int id) const
 {
 	int newListSize = 0;
 
@@ -88,7 +88,7 @@ void C_List::GetProgramID(int id) const
 
 }
 
-C_Program C_List::Program1()
+C_Program CList::Program1()
 {
 	C_Program Program1;
 	Program1.setTime(25326);
@@ -97,7 +97,7 @@ C_Program C_List::Program1()
 	Program1.setIndex(123);
 	return Program1;
 }
-C_Program C_List::Program2()
+C_Program CList::Program2()
 {
 	C_Program Program2;
 	Program2.setTime(55555);

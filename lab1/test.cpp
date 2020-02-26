@@ -1,13 +1,13 @@
 #include "List.h"
 #include "Program.h"
 
-void Test_GetProgramID(C_List);
-void Test_AddEl(C_List&);
-void Test_DelEl(C_List&);
+void Test_GetProgramID(CList);
+void Test_AddEl(CList&);
+void Test_DelEl(CList&);
 
 int main() {
 	setlocale(LC_ALL, "Rus");
-	C_List List;
+	CList List;
 	List.setListSize(3);
 	List.CreateList();
 
@@ -24,11 +24,11 @@ int main() {
 
 	return 0;
 }
-void Test_GetProgramID(C_List list)
+void Test_GetProgramID(CList list)
 {
 	list.GetProgramID(123);
 }
-void Test_AddEl(C_List& list)
+void Test_AddEl(CList& list)
 {
 	C_Program newProgram = list.Program2();
 	int size = list.getListSize();
@@ -38,7 +38,7 @@ void Test_AddEl(C_List& list)
 		printf("\nТест добавления элемента в список\t выполнен успешно.\n");
 	else printf("\nТест добавления элемента в список\t не выполнен успешно.\n");
 }
-void Test_DelEl(C_List& list)
+void Test_DelEl(CList& list)
 {
 	int size = list.getListSize();
 	list.DeleteEl(3);
