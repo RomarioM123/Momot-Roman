@@ -87,7 +87,7 @@ int CList::linesInFile(string filename)
 {
 	int size = 0;
 	string line;
-	regex regular("([\\d]* [\\d]* [\\d]* [\\d]* [true|false]* [A-Z]+[\\w]* [\\w]*)");
+	regex regular("([\\d]* [\\d]* [\\d]* [\\d]* [true|false]* [A-ZА-Я]+[A-Za-zА-Яа-я\\d,.;: \-]* [A-Za-zА-Яа-я\\d]*)");
 
 	ifstream fin(filename);
 	if (!fin.is_open())
@@ -98,8 +98,8 @@ int CList::linesInFile(string filename)
 
 	while (getline(fin, line))
 	{
-		if(regex_match(line, regular))
-		size++;
+		if (regex_match(line, regular))	size++;
+		else cout << endl << "Не все строки в файле прошли проверку." << endl;
 	}
 
 	fin.close();
@@ -112,9 +112,9 @@ void CList::readFile(string filename)
 
 	string line, var;
 	int size = CList::linesInFile(filename);
-	regex regular("([\\d]* [\\d]* [\\d]* [\\d]* [true|false]* [A-Z]+[\\w]* [\\w]*)");
+	regex regular("([\\d]* [\\d]* [\\d]* [\\d]* [true|false]* [A-ZА-Я]+[A-Za-zА-Яа-я\\d,.;: \-]* [A-Za-zА-Яа-я\\d]*)");
 	int i = 0;
-	
+
 	delete[] list;
 	list = new C_Program[size];
 	while (getline(fin, line) && i < size)
@@ -125,14 +125,14 @@ void CList::readFile(string filename)
 			bool trojan;
 			string name, name2;
 			string trueFalse;
-
-			fin >> index;
-			fin >> time;
-			fin >> size;
-			fin >> lines;
-			fin >> trueFalse;
-			fin >> name;
-			fin >> name2;
+			std::istringstream temp(line);
+			temp >> index;
+			temp >> time;
+			temp >> size;
+			temp >> lines;
+			temp >> trueFalse;
+			temp >> name;
+			temp >> name2;
 
 			if (trueFalse == "true") trojan = true;
 			else trojan = false;
@@ -225,22 +225,22 @@ C_Program CList::programs(int valueX)
 
 	if (valueX == 1)
 	{
-		C_Program Program1(true, 222, 222, 222, 1234, "Скайп");
+		C_Program Program1(true, 222, 222, 222, 1234, "Skype");
 		return Program1;
 	}
 	else if (valueX == 2)
 	{
-		C_Program Program2(true, 333, 333, 666, 5678, "Калькулятор Стандартный");
+		C_Program Program2(true, 333, 333, 666, 5678, "Standart Calculator");
 		return Program2;
 	}
 	else if (valueX == 3)
 	{
-		C_Program Program3(false, 444, 444, 444, 9532, "Домино Супер");
+		C_Program Program3(false, 444, 444, 444, 9532, "Domino Super");
 		return Program3;
 	}
 	else if (valueX == 4)
 	{
-		C_Program Program4(false, 555, 555, 555, 4356, "Редактор Текста");
+		C_Program Program4(false, 555, 555, 555, 4356, "Text editor");
 		return Program4;
 	}
 	return standartProgram;
@@ -250,6 +250,7 @@ void CList::enterNewEl()
 	int time, size, lines, index;
 	bool trojan;
 	string name, name2, trojan2, data;
+	regex regular("(^[A-Z]+[\\w]* [\\w]*)");
 
 	cout << "Введите данные в линию в таком порядке:";
 	cout << "Время Размер Строки Троян(true/false) Индекс Название" << endl;
@@ -268,10 +269,12 @@ void CList::enterNewEl()
 
 	if (name2 == "") name = name + " ";
 	else(name = name + " " + name2);
-	
-	bool value = checkName(name);
-	if (value == false)
+
+	if (!regex_match(name.c_str(), regular))
 	{
+		cout << "Было введено неправильное имя. Формат имени:" << endl;
+		cout << "Первое слово не должно начинаться с маленькой буквы." << endl;
+		cout << "Не должно содержать символы." << endl;
 		cout << "Завершение работы функции. Повторите попытку.";
 		return;
 	}
@@ -282,18 +285,14 @@ void CList::enterNewEl()
 	C_Program el(trojan, time, size, lines, index, name);
 	addEl(el);
 }
-bool CList::checkName(const string name)
+void CList::regexTask()
 {
 	regex regular("(^[A-Z]+[\\w]* [\\w]*)");
-	if (!regex_search(name.c_str(), regular))
-	{
-		cout << "Было введено неправильное имя. Формат имени:" << endl;
-		cout << "Первое слово не должно начинаться с маленькой буквы." << endl;
-		cout << "Не должно содержать символы." << endl;
-		return false;
-	}
-
-	return true;
+	int listSize = getListSize();
+	
+	for (int i = 0; i < listSize; i++)
+		if (regex_match(list[i].getName(), regular))
+			printOneEl(i);
 }
 
 CList::~CList()

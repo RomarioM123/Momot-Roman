@@ -52,6 +52,7 @@ void menu()
 			cout << "9)Завершение работы" << endl;
 			cout << "10)Получить элемент класса из строки" << endl;
 			cout << "11)Ввод данных с клавиатуры" << endl;
+			cout << "12)Получить список программ, названия которых состоят из 2 слов" << endl;
 			cout << "=============================" << endl << "Ваш выбор: ";
 			cin >> choise;
 			cout << endl;
@@ -132,6 +133,9 @@ void menu()
 			break;
 		case 11:
 			list.enterNewEl();
+			break;
+		case 12:
+			list.regexTask();
 			break;
 		default:
 			cout << "Неверный символ. Повторите попытку." << endl;

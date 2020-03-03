@@ -22,7 +22,7 @@ public:
 	stringstream getOneEl(int) const;
 	void showOneEl(stringstream&) const;
 	void enterNewEl();
-	bool checkName(const string);
+	void regexTask();
 
 	C_Program getProgramID(int)const;
 	C_Program programs(int);
