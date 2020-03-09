@@ -20,9 +20,10 @@ void menu()
 	C_Program getProgram;		//программа, которая вернётся при получении ID
 	C_Program newProgram;		//программа для добавления в список
 	int choise = 1, value = 0, stop = 1;
-	string fileName;			//переменная для названия файла
+	string fileName;			//название файла
 	string::size_type n;
 	stringstream str;
+	int size;					//количество элементов больше определённого размера
 	list.createList(4);
 	cout << endl << "Выберите команду для работы со списком: ";
 
@@ -34,13 +35,13 @@ void menu()
 			cin >> choise;
 			cout << endl;
 
-			if (choise == 1) choise = 3;
-			else if (choise == 0) choise = 5;
+			if (choise == 1) choise = 11;
+			else if (choise == 0) choise = 9;
 			else cout << "Неверный символ." << endl;
 		}
 		else
 		{
-			cout << endl << endl;
+			cout << endl;
 			cout << "1)Вывести всё на экран" << endl;
 			cout << "2)Вывести 1 элемент на экран" << endl;
 			cout << "3)Найти программу по индексу" << endl;
@@ -97,7 +98,7 @@ void menu()
 			cin >> value;
 			cout << endl;
 
-			list.task(value);
+			size = list.task(value);
 			break;
 		case 7:
 			cout << "Введите название файла для чтения данных: ";

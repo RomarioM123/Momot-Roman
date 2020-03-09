@@ -25,6 +25,8 @@ using std::ifstream;
 using std::regex_match;
 using std::regex_search;
 using std::cmatch;
+using std::setiosflags;
+using std::ios;
 
 class C_Program {
 private:

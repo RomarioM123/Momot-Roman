@@ -15,7 +15,7 @@ public:
 	void printOneEl(int) const;
 	void addEl(C_Program&);
 	void deleteEl(int);
-	void task(int);
+	int task(int);
 	int linesInFile(string);
 	void readFile(string);
 	void saveToFile(string);

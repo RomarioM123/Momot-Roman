@@ -1,39 +1,39 @@
 #include "Program.h"
 #include "List.h"
 
-void Test_GetProgramID(CList&, int&);
+void Test_GetProgramID(CList&);
 void Test_AddEl(CList&);
 void Test_DelEl(CList&);
-void Test_Task(CList&, int&);
+void Test_Task(CList&);
 void Test_Stringstream(CList&);
-void Test_ReadFile(CList& list);
+void Test_ReadFile(CList&);
+void Test_RegexTask(CList&);
 
 int main() {
     setlocale(LC_ALL, "Rus");
     CList List;
     List.createList(5);
 
-    int values[] = { 5678, 200 };
-
-    Test_GetProgramID(List, values[0]);
+    Test_GetProgramID(List);
     Test_AddEl(List);
     Test_DelEl(List);
-    List.printAll();
-    Test_Task(List, values[1]);
+    Test_Task(List);
     Test_Stringstream(List);
-    List.printAll();
     Test_ReadFile(List);
-    List.printAll();
+    Test_RegexTask(List);
     
     if (_CrtDumpMemoryLeaks()) cout << "\n\nЕсть утечка памяти.\n\n";
     else cout << "\n\nУтечка памяти отсутствует\n\n.";
 
     return 0;
 }
-void Test_GetProgramID(CList& list, int& value)
+void Test_GetProgramID(CList& list)
 {
-    cout << "\n\nЗдесь должен быть элемент с идентификатором 5678:" << endl;
-    list.getProgramID(value);
+    int expected = 5678;
+    int real = list.list[2].getIndex();
+
+    if(expected == real) cout << "Тест получения элемента по ID\t\t выполнен успешно.\n";
+    else cout << "Тест получения элемента по ID\t\t не выполнен успешно.\n";
 }
 void Test_AddEl(CList& list)
 {
@@ -41,21 +41,25 @@ void Test_AddEl(CList& list)
     int size = list.getListSize();
     list.addEl(newProgram);
 
-    if (list.getListSize() > size) cout << "\n\nТест добавления элемента в список\t выполнен успешно.\n\n";
-    else cout << "\n\nТест добавления элемента в список\t не выполнен успешно.\n\n";
+    if (list.getListSize() > size) cout << "Тест добавления элемента в список\t выполнен успешно.\n";
+    else cout << "Тест добавления элемента в список\t не выполнен успешно.\n";
 }
 void Test_DelEl(CList& list)
 {
     int size = list.getListSize();
     list.deleteEl(3);
 
-    if (size > list.getListSize()) cout << "\n\nТест функции удаления\t\t выполнен успешно.\n\n";
-    else cout << "\n\nТест функции удаления\t\t не выполнен успешно.\n\n";
+    if (size > list.getListSize()) cout << "Тест функции удаления\t\t выполнен успешно.\n\n";
+    else cout << "Тест функции удаления\t\t не выполнен успешно.\n\n";
 }
-void Test_Task(CList& list, int& value)
+void Test_Task(CList& list)
 {
-    cout << "\n\nЗдесь должны быть элементы размером больше 200 и не трояны:\n";
-    list.task(value);
+    int expected = 2;
+    int real = list.task(200);
+
+    cout << endl;
+    if(expected == real) cout << "Тест функции нахождения элементов по параметру\t\t выполнен успешно.\n";
+    else cout << "Тест функции нахождения элементов по параметру\t\t не выполнен успешно.\n";
 }
 void Test_Stringstream(CList& list)
 {
@@ -64,13 +68,22 @@ void Test_Stringstream(CList& list)
     string nameReal;
     funcResult >> nameReal;
 
-    if (nameExpected == nameReal) cout << "\n\nТест функции stringstream\t\t пройдена успешно." << endl;
-    else cout << "\n\nТест функции stringstream\t\t не пройдена успешно." << endl;
+    if (nameExpected == nameReal) cout << "Тест функции stringstream\t\t выполнен успешно." << endl;
+    else cout << "Тест функции stringstream\t\t не выполнен успешно." << endl;
 }
 void Test_ReadFile(CList& list)
 {
     string filename = "data.txt";
     list.readFile(filename);
 
-    cout << "Если данные ниже соответствуют данным в файле, то тест пройден" << endl;
+    string expected = "Notepad ";
+    string real = list.list[0].getName();
+
+    if (expected == real) cout << "Тест функции чтения из файла\t\t выполнен успешно." << endl;
+    else cout << "Тест функции чтения из файла\t\t не выполнен успешно." << endl;
+}
+void Test_RegexTask(CList& list)
+{
+    cout << "Здесь должны быть программы, содержащие в названии больше 2 слов:" << endl;
+    list.regexTask();
 }
