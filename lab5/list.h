@@ -23,7 +23,10 @@ public:
 	void showOneEl(stringstream&) const;
 	void enterNewEl();
 	void regexTask();
-	void sort();
+	void sort(func_t);
+
+	bool SortAsc(int, int);
+	bool SortDesc(int, int);
 
 	C_Program getProgramID(int)const;
 	C_Program programs(int);

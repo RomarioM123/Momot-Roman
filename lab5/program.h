@@ -13,6 +13,8 @@
 #include <sstream>
 #include <regex>
 
+typedef bool (func_t)(int, int);
+
 using std::string;
 using std::cin;
 using std::cout;

@@ -8,14 +8,9 @@ void CList::createList(int value)
 	for (int i = 0; i < listSize; i++)
 		list[i] = programs(i);
 }
-void CList::setListSize(int size)
-{
-	listSize = size;
-}
-int CList::getListSize() const
-{
-	return listSize;
-}
+
+void CList::setListSize(int size) { listSize = size; }
+int CList::getListSize() const { return listSize; }
 
 void CList::printAll() const
 {
@@ -141,6 +136,7 @@ void CList::readFile(string filename)
 			string name, name2;
 			string trueFalse;
 			std::istringstream temp(line);
+
 			temp >> index;
 			temp >> time;
 			temp >> size;
@@ -356,9 +352,28 @@ void CList::regexTask()
 
 	cout << endl;
 }
-void CList::sort()
-{
 
+bool CList::SortAsc(int a, int b) { return a > b; }
+bool CList::SortDesc(int a, int b) { return a < b; }
+void CList::sort(func_t condition)
+{
+	C_Program temp;
+	int size = getListSize();
+	bool pr;
+
+	do {
+		pr = 0;
+		for (int i = 0; i < size-1; i++)
+		{
+			if (condition(list[i].getLines(), list[i+1].getLines()))
+			{
+				temp = list[i];
+				list[i] = list[i + 1];
+				list[i + 1] = temp;
+				pr = 1;
+			}
+		}
+	} while (pr == 1);
 }
 
 CList::~CList()

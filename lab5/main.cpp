@@ -145,13 +145,13 @@ void menu()
 			cout << "Ваш выбор: " << endl;
 			cin >> value;
 
-			if (value != 1 || value != 2)
+			if (value == 1) list.sort(list.SortAsc);
+			if (value == 2) list.sort(list.SortDesc);
+			else
 			{
 				cout << "Ошибка. Неверный номер команды." << endl;
 				break;
 			}
-
-			list.sort();
 
 			break;
 		default:
