@@ -25,8 +25,8 @@ public:
 	void regexTask();
 	void sort(comp);
 
-	static bool sortAsc(int, int);
-	static bool sortDesc(int, int);
+	static bool sortAsc(const int&, const int&);
+	static bool sortDesc(const int&, const int&);
 
 	C_Program getProgramID(int)const;
 	C_Program programs(int);

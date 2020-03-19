@@ -5,7 +5,7 @@ void CList::createList(int value)
 	listSize = value;
 	list = new C_Program[listSize];
 
-	for (int i = 0; i < listSize; i++)
+	for (size_t i = 0; i < listSize; i++)
 		list[i] = programs(i);
 }
 
@@ -17,7 +17,7 @@ void CList::printAll() const
 	cout << endl;
 	cout << "  Время\t    Размер\tСтроки\t    Троян\tИндекс\t\tНазвание";
 	cout << endl;
-	for (int i = 0; i < listSize; i++)
+	for (size_t i = 0; i < listSize; i++)
 		printOneEl(i);
 
 	cout << endl;
@@ -36,13 +36,13 @@ void CList::addEl(C_Program& newProgram)
 {
 	C_Program* newList = new C_Program[listSize + 1];
 
-	for (int i = 0; i < listSize; i++)
+	for (size_t i = 0; i < listSize; i++)
 		newList[i] = list[i];
 	newList[listSize++] = newProgram;
 	delete[] list;
 
 	list = new C_Program[listSize];
-	for (int i = 0; i < listSize; i++)
+	for (size_t i = 0; i < listSize; i++)
 		list[i] = newList[i];
 
 	delete[] newList;
@@ -63,14 +63,14 @@ void CList::deleteEl(int index)
 
 	C_Program* newList = new C_Program[listSize - 1];
 
-	for (int i = 0; i < index - 1; i++)
+	for (size_t i = 0; i < index - 1; i++)
 		newList[i] = list[i];
-	for (int i = index - 1, j = index; j < listSize; i++, j++)
+	for (size_t i = index - 1, j = index; j < listSize; i++, j++)
 		newList[i] = list[j];
 	delete[] list;
 
 	list = new C_Program[listSize--];
-	for (int i = 0; i < listSize; i++)
+	for (size_t i = 0; i < listSize; i++)
 		list[i] = newList[i];
 	delete[] newList;
 
@@ -80,7 +80,7 @@ int CList::task(int minimalSize)
 {
 	int size = 0;
 
-	for (int i = 0; i < listSize; i++)
+	for (size_t i = 0; i < listSize; i++)
 		if (list[i].getSize() > minimalSize&& list[i].getTrojan() == false)
 		{
 			printOneEl(i);
@@ -213,7 +213,7 @@ void CList::saveToFile(string filename)
 
 	fout.setf(ios::left);
 	fout << "\tВремя\tРазмер\t    Строки\tТроян\t    Индекс\tНазвание" << endl;
-	for (int i = 0; i < getListSize(); i++)
+	for (size_t i = 0; i < getListSize(); i++)
 	{
 		fout << setw(2) << i + 1 << ")\t " << setw(9) << list[i].getTime() << setw(12);
 		fout << list[i].getSize() << setw(11) << list[i].getLines() << setw(12);
@@ -265,7 +265,7 @@ C_Program CList::getProgramID(int id) const
 {
 	C_Program newProgram;
 
-	for (int i = 0; i < listSize; i++)
+	for (size_t i = 0; i < listSize; i++)
 		if (list[i].getIndex() == id)
 		{
 			printOneEl(i);
@@ -346,15 +346,14 @@ void CList::regexTask()
 	regex regular("(^[A-ZА-Я]+[\\wА-Яа-я,.;:-]* [\\wА-Яа-я,.;:-]+)");
 	int listSize = getListSize();
 	
-	for (int i = 0; i < listSize; i++)
+	for (size_t i = 0; i < listSize; i++)
 		if (regex_match(list[i].getName(), regular))
 			printOneEl(i);
 
 	cout << endl;
 }
-
-bool CList::sortAsc(int a, int b) { return a > b; }
-bool CList::sortDesc(int a, int b) { return a < b; }
+bool CList::sortAsc(const int& a, const int& b) { return a > b; }
+bool CList::sortDesc(const int& a, const int& b) { return a < b; }
 void CList::sort(comp condition)
 {
 	C_Program temp;
@@ -363,7 +362,7 @@ void CList::sort(comp condition)
 
 	do {
 		pr = 0;
-		for (int i = 0; i < size-1; i++)
+		for (size_t i = 0; i < size-1; i++)
 		{
 			if (condition(list[i].getLines(), list[i+1].getLines()))
 			{

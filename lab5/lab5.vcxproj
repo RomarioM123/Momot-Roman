@@ -22,6 +22,8 @@
     <Text Include="data.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="author.cpp" />
+    <ClCompile Include="date.cpp" />
     <ClCompile Include="list.cpp" />
     <ClCompile Include="main.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
@@ -32,6 +34,8 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="author.h" />
+    <ClInclude Include="date.h" />
     <ClInclude Include="list.h" />
     <ClInclude Include="program.h" />
   </ItemGroup>

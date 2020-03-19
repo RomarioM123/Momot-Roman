@@ -1,5 +1,7 @@
 #include "program.h"
 #include "list.h"
+#include "author.h"
+#include "date.h"
 
 void menu();
 

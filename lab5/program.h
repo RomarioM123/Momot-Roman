@@ -1,4 +1,5 @@
 #pragma once
+
 #define _CRT_SECURE_NO_WARNINGS
 #include <string.h>
 #define CRTDBG_MAP_ALLOC
@@ -12,8 +13,6 @@
 #include <fstream>
 #include <sstream>
 #include <regex>
-
-typedef bool (comp)(const int&, const int&);
 
 using std::string;
 using std::cin;
@@ -30,21 +29,33 @@ using std::cmatch;
 using std::setiosflags;
 using std::ios;
 
+#include "author.h"
+#include "date.h"
+
+typedef bool (comp)(const int&, const int&);
+
 class C_Program {
 private:
-	int timeOfWork;     //average time of program execution
-	int size;           //size of program
-	int amountOfLines;  //number of lines in code
-	int index;          //index
-	bool trojan;		//trojan(yes or no)
-	string name;		//name of program
+	int timeOfWork;			//average time of program execution
+	int size;				//size of program
+	int amountOfLines;		//number of lines in code
+	int index;				//index
+	bool trojan;			//trojan(yes or no)
+	string name;			//name of program
+	CAuthor author;			//creator of program
 public:
+	CDate date;				//date of creating program
+	
 	int getTime() const;
 	int getSize() const;
 	int getLines() const;
 	int getIndex()const;
 	bool getTrojan()const;
 	string getName() const;
+	sint getDay()const;
+	sint getMonth()const;
+	sint getYear()const;
+	string getAuthor()const;
 
 	void setTime(const int);
 	void setSize(const int);
@@ -52,6 +63,10 @@ public:
 	void setIndex(const int);
 	void setTrojan(const bool);
 	void setName(const string);
+	void setDay(const sint);
+	void setMonth(const sint);
+	void setYear(const sint);
+	void setAuthor(const string);
 
 	C_Program();
 	C_Program(bool, int, int, int, int, string);
