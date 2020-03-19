@@ -353,9 +353,9 @@ void CList::regexTask()
 	cout << endl;
 }
 
-bool CList::SortAsc(int a, int b) { return a > b; }
-bool CList::SortDesc(int a, int b) { return a < b; }
-void CList::sort(func_t condition)
+bool CList::sortAsc(int a, int b) { return a > b; }
+bool CList::sortDesc(int a, int b) { return a < b; }
+void CList::sort(comp condition)
 {
 	C_Program temp;
 	int size = getListSize();

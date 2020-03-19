@@ -142,11 +142,11 @@ void menu()
 		case 13:
 			cout << "Сортировать по:" << endl;
 			cout << "1) Возрастанию \n2) Убыванию\n";
-			cout << "Ваш выбор: " << endl;
+			cout << "Ваш выбор: ";
 			cin >> value;
 
-			if (value == 1) list.sort(list.SortAsc);
-			if (value == 2) list.sort(list.SortDesc);
+			if (value == 1) list.sort(list.sortAsc);
+			if (value == 2) list.sort(list.sortDesc);
 			else
 			{
 				cout << "Ошибка. Неверный номер команды." << endl;
