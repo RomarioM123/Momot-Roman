@@ -7,6 +7,7 @@ private:
 
 public:
 	C_Program* list;
+
 	void setListSize(int);
 	int getListSize() const;
 	

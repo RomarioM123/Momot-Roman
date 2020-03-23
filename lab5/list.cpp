@@ -14,9 +14,13 @@ int CList::getListSize() const { return listSize; }
 
 void CList::printAll() const
 {
+	cout << endl << setiosflags(ios::left);
+	cout << setw(12) << "  Время" << setw(12) << "Размер";
+	cout << setw(10) << "Строки" << setw(11) << "Троян";
+	cout << setw(14) << "Индекс" << setw(21) << "Название";
+	cout << setw(16) << "Год выпуска" << setw(11) << "Автор";
 	cout << endl;
-	cout << "  Время\t    Размер\tСтроки\t    Троян\tИндекс\t\tНазвание";
-	cout << endl;
+	
 	for (size_t i = 0; i < listSize; i++)
 		printOneEl(i);
 
@@ -27,10 +31,12 @@ void CList::printOneEl(int number) const
 	cout << setiosflags(ios::left) << setw(2) << number + 1 << ")";
 	cout << setw(10) << list[number].getTime();
 	cout << setw(12) << list[number].getSize();
-	cout << setw(12) << list[number].getLines();
+	cout << setw(9) << list[number].getLines();
 	cout << setw(12) << boolalpha << list[number].getTrojan();
-	cout << setw(12) << list[number].getIndex();
-	cout << setw(15) << list[number].getName() << endl;
+	cout << setw(11) << list[number].getIndex();
+	cout << setw(26) << list[number].getName();
+	cout << setw(14) << list[number].getYear();
+	cout << setw(12) << list[number].getAuthor() << endl;
 }
 void CList::addEl(C_Program& newProgram)
 {
@@ -81,7 +87,7 @@ int CList::task(int minimalSize)
 	int size = 0;
 
 	for (size_t i = 0; i < listSize; i++)
-		if (list[i].getSize() > minimalSize&& list[i].getTrojan() == false)
+		if (list[i].getSize() > minimalSize && list[i].getTrojan() == false)
 		{
 			printOneEl(i);
 			size++;
@@ -93,7 +99,7 @@ int CList::linesInFile(string filename)
 {
 	int size = 0;
 	string line;
-	regex regular("([\\d]* [\\d]* [\\d]* [\\d]* [true|false]* [A-ZА-Я]+[\\wА-Яа-я,.;:-]* [\\wА-Яа-я,.;:-]*)");
+	regex regular("([\\d]* [\\d]* [\\d]* [\\d]* [true|false]* [\\w]* [\\d]* [\\d]* [\\d]* [A-ZА-Я]+[\\wА-Яа-я,.;:-]* [\\wА-Яа-я,.;:-]*)");
 
 	ifstream fin(filename);
 	if (!fin.is_open())
@@ -122,8 +128,9 @@ void CList::readFile(string filename)
 
 	string line, var;
 	int size = CList::linesInFile(filename);
-	regex regular("([\\d]* [\\d]* [\\d]* [\\d]* [true|false]* [A-ZА-Я]+[\\wА-Яа-я,.;:-]* [\\wА-Яа-я,.;:-]*)");
-	int i = 0, a = 0, b;
+	regex regular("([\\d]* [\\d]* [\\d]* [\\d]* [true|false]* [\\w]* [\\d]* [\\d]* [\\d]* [A-ZА-Я]+[\\wА-Яа-я,.;:-]* [\\wА-Яа-я,.;:-]*)");
+	int i = 0, a = 0;
+	bool b;
 
 	delete[] list;
 	list = new C_Program[size];
@@ -132,6 +139,8 @@ void CList::readFile(string filename)
 		if (regex_match(line.c_str(), regular))
 		{
 			int time, size, lines, index;
+			sint day, month, year;
+			string author;
 			bool trojan;
 			string name, name2;
 			string trueFalse;
@@ -142,6 +151,10 @@ void CList::readFile(string filename)
 			temp >> size;
 			temp >> lines;
 			temp >> trueFalse;
+			temp >> author;
+			temp >> day;
+			temp >> month;
+			temp >> year;
 			temp >> name;
 			temp >> name2;
 
@@ -198,7 +211,7 @@ void CList::readFile(string filename)
 		
 			} while (b == 1);
 
-			C_Program newElement(trojan, time, size, lines, index, name);
+			C_Program newElement(trojan, time, size, lines, index, name, author, day, month, year);
 			list[i++] = newElement;
 		}
 	}
@@ -212,13 +225,23 @@ void CList::saveToFile(string filename)
 	std::ofstream fout(filename);
 
 	fout.setf(ios::left);
-	fout << "\tВремя\tРазмер\t    Строки\tТроян\t    Индекс\tНазвание" << endl;
+	fout << setw(12) << "  Время" << setw(12) << "Размер";
+	fout << setw(13) << "Строки" << setw(11) << "Троян";
+	fout << setw(15) << "Индекс" << setw(24) << "Название";
+	fout << setw(16) << "Год выпуска" << setw(11) << "Автор";
+	fout << endl;
+
 	for (size_t i = 0; i < getListSize(); i++)
 	{
-		fout << setw(2) << i + 1 << ")\t " << setw(9) << list[i].getTime() << setw(12);
-		fout << list[i].getSize() << setw(11) << list[i].getLines() << setw(12);
-		fout << boolalpha << list[i].getTrojan() << setw(11) << list[i].getIndex() << setw(15);
-		fout << list[i].getName() << endl;
+		fout << setiosflags(ios::left) << setw(2) << i + 1 << ")";
+		fout << setw(10) << list[i].getTime();
+		fout << setw(12) << list[i].getSize();
+		fout << setw(12) << list[i].getLines();
+		fout << setw(12) << boolalpha << list[i].getTrojan();
+		fout << setw(15) << list[i].getIndex();
+		fout << setw(26) << list[i].getName();
+		fout << setw(14) << list[i].getYear();
+		fout << setw(12) << list[i].getAuthor() << endl;
 	}
 
 	cout << "Запись в файл завершена." << endl;
@@ -227,23 +250,34 @@ void CList::saveToFile(string filename)
 stringstream CList::getOneEl(int value) const
 {
 	stringstream temp;
-	temp << " " << list[value].getName() << " " << list[value].getTrojan() << " " << list[value].getIndex() << " " << list[value].getLines() << " " << list[value].getSize() << " " << list[value].getTime();
+	
+	temp << " " << list[value].getIndex() << " " << list[value].getTime() << " " << list[value].getSize() 
+	<< " " << list[value].getLines() << " " << list[value].getTrojan() << " " << list[value].getAuthor() 
+	<< " " << list[value].getDay() << " " << list[value].getMonth() << " " << list[value].getYear()
+	<< " " << list[value].getName();
+	
 	return temp;
 }
 void CList::showOneEl(stringstream& line) const
 {
-	int TimeOfWork, size, AmountOfLines, index;
+	int time, size, lines, index;
+	sint day, month, year;
+	string author;
 	bool trojan;
 	string name, name2;
 	string trueFalse;
 
+	line >> index;
+	line >> time;
+	line >> size;
+	line >> lines;
+	line >> trueFalse;
+	line >> author;
+	line >> day;
+	line >> month;
+	line >> year;
 	line >> name;
 	line >> name2;
-	line >> trueFalse;
-	line >> index;
-	line >> AmountOfLines;
-	line >> size;
-	line >> TimeOfWork;
 	
 	if (trueFalse == "1") trojan = true;
 	else trojan = false;
@@ -251,14 +285,21 @@ void CList::showOneEl(stringstream& line) const
 	if (name2 == "") name = name + " ";
 	else(name = name + " " + name2);
 
-	cout << "\n   Время   Размер\tСтроки\t    Троян\tИндекс\t     Название";
-	cout << endl << setiosflags(ios::left) << setw(2) << 1 << ")";
-	cout << setw(10) << TimeOfWork;
+	cout << endl << setiosflags(ios::left);
+	cout << setw(12) << "  Время" << setw(12) << "Размер";
+	cout << setw(10) << "Строки" << setw(11) << "Троян";
+	cout << setw(14) << "Индекс" << setw(21) << "Название";
+	cout << setw(16) << "Год выпуска" << setw(11) << "Автор";
+	cout << endl << "   ";
+
+	cout << setw(10) << time;
 	cout << setw(12) << size;
-	cout << setw(12) << AmountOfLines;
-	cout << setw(12) << boolalpha << trojan;
-	cout << setw(12) << index;
-	cout << setw(15) << name;
+	cout << setw(10) << lines;
+	cout << setw(11) << boolalpha << trojan;
+	cout << setw(10) << index;
+	cout << setw(27) << name;
+	cout << setw(12) << year;
+	cout << setw(15) << author;
 	cout << endl;
 }
 C_Program CList::getProgramID(int id) const
@@ -281,22 +322,24 @@ C_Program CList::programs(int valueX)
 
 	if (valueX == 1)
 	{
-		C_Program Program1(true, 222, 222, 222, 1234, "Skype");
+		C_Program Program1(true, 222, 222, 222, 1234, "Skype", (CAuthor)"Microsoft", 2, 12, 2002);
+		return Program1;
+
 		return Program1;
 	}
 	else if (valueX == 2)
 	{
-		C_Program Program2(true, 333, 333, 666, 5678, "Standart Calculator");
+		C_Program Program2(true, 333, 333, 666, 5678, "Standart Calculator", (CAuthor)"Bethesda", 13, 3, 1993);
 		return Program2;
 	}
 	else if (valueX == 3)
 	{
-		C_Program Program3(false, 444, 444, 444, 9532, "Domino Super");
+		C_Program Program3(false, 444, 444, 444, 9532, "Domino Super", (CAuthor)"Aida", 14, 4, 1944);
 		return Program3;
 	}
 	else if (valueX == 4)
 	{
-		C_Program Program4(false, 555, 555, 555, 4356, "Text editor");
+		C_Program Program4(false, 555, 555, 555, 4356, "Text editor", (CAuthor)"Google", 5, 5, 1995);
 		return Program4;
 	}
 	return standartProgram;
@@ -305,41 +348,55 @@ void CList::enterNewEl()
 {
 	int time, size, lines, index;
 	bool trojan;
+	string author;
+	sint day, month, year;
 	string name, name2, trojan2, data;
-	regex regular("(^[A-Z]+[\\w]* [\\w]*)");
+	regex regular("([\\d]* [\\d]* [\\d]* [\\d]* [true|false]* [\\w]* [\\d]* [\\d]* [\\d]* [A-ZА-Я]+[\\wА-Яа-я,.;:-]* [\\wА-Яа-я,.;:-]*)");
 
 	cout << "Введите данные в линию в таком порядке:";
-	cout << "Время Размер Строки Троян(true/false) Индекс Название" << endl;
+	cout << "Индекс Время Размер Строки Троян(true/false) Компания День Месяц Год Название" << endl;
 
 	cin.ignore();
 	getline(cin, data);
-	std::istringstream temp(data);
 
-	temp >> time;
-	temp >> size;
-	temp >> lines;
-	temp >> trojan2;
-	temp >> index;
-	temp >> name;
-	temp >> name2;
+	data = data + " ";
 
-	if (name2 == "") name = name + " ";
-	else(name = name + " " + name2);
-
-	if (!regex_match(name.c_str(), regular))
+	if (regex_match(data, regular))
 	{
-		cout << "Было введено неправильное имя. Формат имени:" << endl;
-		cout << "Первое слово не должно начинаться с маленькой буквы." << endl;
-		cout << "Не должно содержать символы." << endl;
-		cout << "Завершение работы функции. Повторите попытку.";
-		return;
+		std::istringstream temp(data);
+
+		temp >> index;
+		temp >> time;
+		temp >> size;
+		temp >> lines;
+		temp >> trojan2;
+		temp >> author;
+		temp >> day;
+		temp >> month;
+		temp >> year;
+		temp >> name;
+		temp >> name2;
+
+		if (name2 == "") name = name + " ";
+		else(name = name + " " + name2);
+
+
+		if (trojan2 == "true") trojan = true;
+		else trojan = false;
+
+		C_Program newProgram(trojan, time, size, lines, index, name, author, day, month, year);
+		addEl(newProgram);
 	}
+	else
+	{
+		cout << endl << "Было введено неправильное имя. Формат имени:" << endl;
+		cout << "Первое слово в названии программы не должно начинаться с маленькой буквы." << endl;
+		cout << "Не должно содержать символы." << endl;
+		cout << "Завершение работы функции." << endl;
+	}
+	
 
-	if (trojan2 == "true") trojan = true;
-	else trojan = false;
-
-	C_Program el(trojan, time, size, lines, index, name);
-	addEl(el);
+	return;
 }
 void CList::regexTask()
 {

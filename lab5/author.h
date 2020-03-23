@@ -6,15 +6,17 @@ using std::string;
 
 class CAuthor {
 private:
-	int listSize;
 	string companyName;
-
-public:
+	int listSize;
 	string* list;
 
+public:
 	void setAuthor(const string);
 	string getAuthor()const;
+
 	string* createList(int size);
+	void deleteList();
+
 	string authors(int value);
 
 	CAuthor();

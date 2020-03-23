@@ -19,45 +19,71 @@ int main()
 void menu()
 {
 	CList list;					//список элементов
+	CAuthor author;				//переменная поля автор
+	string* listAuthor;
 	C_Program getProgram;		//программа, которая вернётся при получении ID
 	C_Program newProgram;		//программа для добавления в список
-	int choise = 1, value = 0, stop = 1;
+	auto choise = 1, choise2 = 0;
+	auto value = 0, stop = 1;
 	string fileName;			//название файла
 	string::size_type n;
 	stringstream str;
 	int size;					//количество элементов больше определённого размера
+	listAuthor = author.createList(4);
 	list.createList(4);
-	cout << endl << "Выберите команду для работы со списком: ";
 
+	cout << endl << "Выберите команду для работы со списком: ";
 	while (stop != 0)
 	{
 		if (list.getListSize() == 0)
 		{
-			cout << "Список пуст. Добавить элемент(1) или закончить работу(0): " << endl;
+			cout << "Список пуст. Что вы хотите сделать?" << endl;
+			cout << "1) Добавить элемент вручную" << endl;
+			cout << "2) Прочитать данные из файла" << endl;
+			cout << "3) Завершение работы" << endl;
+			cout << "======================================" << endl;
+			cout << "Ваш выбор: ";
 			cin >> choise;
 			cout << endl;
 
-			if (choise == 1) choise = 11;
-			else if (choise == 0) choise = 9;
-			else cout << "Неверный символ." << endl;
+			switch (choise)
+			{
+			case 1:
+				list.enterNewEl();
+				break;
+
+			case 2:
+				cout << "Введите название файла для чтения данных: ";
+				cin >> fileName;
+				cout << endl;
+
+				n = fileName.find(".txt");
+				if (n > 187) fileName += string(".txt");
+
+				list.readFile(fileName);
+				break;
+
+			case 3:
+				cout << "Завершение работы." << endl;
+				stop = 0;
+				break;
+
+			default:
+				cout << "Неверный номер элемента. Повторите попытку." << endl;
+				break;
+			}
 		}
 		else
 		{
 			cout << endl;
-			cout << "1)Вывести всё на экран" << endl;
-			cout << "2)Вывести 1 элемент на экран" << endl;
-			cout << "3)Найти программу по индексу" << endl;
-			cout << "4)Добавить элемент (в конец)" << endl;
-			cout << "5)Удалить элемент" << endl;
-			cout << "6)Получить список программ меньше определённого размера и не трояны" << endl;
-			cout << "7)Получить данные из файла" << endl;
-			cout << "8)Записать данные в файл" << endl;
-			cout << "9)Завершение работы" << endl;
-			cout << "10)Получить элемент класса из строки" << endl;
-			cout << "11)Ввод данных с клавиатуры" << endl;
-			cout << "12)Получить список программ, названия которых состоят из 2 слов" << endl;
-			cout << "13)Отсортировать список по количеству строк" << endl;
-			cout << "=============================" << endl << "Ваш выбор: ";
+			cout << "1)Вывод на экран" << endl;
+			cout << "2)Работа с файлами" << endl;
+			cout << "3)Сортировка данных" << endl;
+			cout << "4)Удаление элемента" << endl;
+			cout << "5)Добавление элементов" << endl;
+			cout << "6)Завершение работы" << endl;
+			cout << "======================================" << endl;
+			cout << "Ваш выбор: ";
 			cin >> choise;
 			cout << endl;
 		}
@@ -65,101 +91,179 @@ void menu()
 		switch (choise)
 		{
 		case 1:
-			list.printAll();
-			break;
-		case 2:
-			cout << "Введите номер элемента, который надо вывести: ";
-			cin >> value;
+			cout << "Выберите команду:" << endl;
+			cout << "1) Вывести весь список на экран" << endl;
+			cout << "2) Вывести один элемент на экран по номеру" << endl;
+			cout << "3) Вывести список программ меньше определённого размера и не трояны" << endl;
+			cout << "4) Вывести список программ, названия которых состоят из 2 слов" << endl;
+			cout << "5) Получить строку с данными" << endl;
+			cout << "6) Вывести программу по ID" << endl;
+			cout << "7) Вернуться к выбору действий" << endl;
+			cout << "======================================" << endl;
+			cout << "Ваш выбор: ";
+			cin >> choise2;
 			cout << endl;
 
-			if (value <= 0 || value > list.getListSize())
+			switch (choise2)
 			{
-				cout << "Неверный номер элемента. Повторите попытку." << endl;
+			case 1:
+				list.printAll();
+				break;
+
+			case 2:
+				cout << "Введите номер элемента, который надо вывести: ";
+				cin >> value;
+				cout << endl;
+
+				if (value <= 0 || value > list.getListSize())
+				{
+					cout << "Неверный номер элемента. Повторите попытку." << endl;
+					break;
+				}
+
+				list.printOneEl(value - 1);
+				break;
+
+			case 3:
+				cout << "Введите минимальный размер программ: ";
+				cin >> value;
+				cout << endl;
+
+				size = list.task(value);
+				break;
+
+			case 4:
+				list.regexTask();
+				break;
+
+			case 5:
+				cout << "Введите номер элемента, который вы хотите получить: ";
+				cin >> value;
+				cout << endl;
+
+				str = list.getOneEl(value - 1);
+				list.showOneEl(str);
+				break;
+
+			case 6:
+				cout << "Введите id элемента, которого вы хотите получить: ";
+				cin >> value;
+				cout << endl;
+
+				getProgram = list.getProgramID(value);
+				break;
+
+			case 7:
+				break;
+
+			default:
+				cout << "Неверный символ. Повторите попытку." << endl;
 				break;
 			}
-			list.printOneEl(value - 1);
+			break;
+		case 2:
+			cout << "Выберите команду:" << endl;
+			cout << "1) Сохранить данные в файл" << endl;
+			cout << "2) Читать данные из файла" << endl;
+			cout << "3) Вернуться к выбору" << endl;
+			cout << "======================================" << endl;
+			cout << "Ваш выбор: ";
+			cin >> choise2;
+			cout << endl;
+			
+			switch (choise2)
+			{
+			case 1:
+				cout << "Введите название файла для записи данных: ";
+				cin >> fileName;
+				cout << endl;
+
+				n = fileName.find(".txt");
+				if (n > 187) fileName += string(".txt");
+
+				list.saveToFile(fileName);
+				break;
+			case 2:
+				cout << "Введите название файла для чтения данных: ";
+				cin >> fileName;
+				cout << endl;
+
+				n = fileName.find(".txt");
+				if (n > 187) fileName += string(".txt");
+
+				list.readFile(fileName);
+				break;
+			case 3:
+				break;
+			default:
+				cout << "Неверный символ. Повторите попытку." << endl;
+				break;
+			}
 			break;
 		case 3:
-			cout << "Введите id элемента, которого вы хотите получить: ";
+			cout << "Сортировать количество строк по:" << endl;
+			cout << "1) Возрастанию" << endl;
+			cout << "2) Убыванию" << endl;
+			cout << "Ваш выбор: ";
 			cin >> value;
 			cout << endl;
 
-			getProgram = list.getProgramID(value);
+			if (value == 1) list.sort(list.sortAsc);
+			else if (value == 2) list.sort(list.sortDesc);
+			else cout << "Ошибка. Неверный номер команды." << endl;
+
 			break;
+
 		case 4:
-			list.addEl(newProgram);
-			break;
-		case 5:
 			cout << "Введите номер элемента, который хотите удалить: ";
 			cin >> value;
 			cout << endl;
 
 			list.deleteEl(value);
 			break;
-		case 6:
-			cout << "Введите минимальный размер программ: ";
-			cin >> value;
-			cout << endl;
 
-			size = list.task(value);
-			break;
-		case 7:
-			cout << "Введите название файла для чтения данных: ";
-			cin >> fileName;
-			cout << endl;
-
-			n = fileName.find(".txt");
-			if (n > 187) fileName += string(".txt");
-
-			list.readFile(fileName);
-			break;
-		case 8:
-			cout << "Введите название файла для записи данных: ";
-			cin >> fileName;
-			cout << endl;
-
-			n = fileName.find(".txt");
-			if (n > 187) fileName += string(".txt");
-
-			list.saveToFile(fileName);
-			break;
-		case 9:
-			cout << "Завершение работы." << endl;
-			stop = 0;
-			break;
-		case 10:
-			cout << "Введите номер элемента, который вы хотите получить: ";
-			cin >> value;
-			cout << endl;
-
-			str = list.getOneEl(value-1);
-			list.showOneEl(str);
-			break;
-		case 11:
-			list.enterNewEl();
-			break;
-		case 12:
-			list.regexTask();
-			break;
-		case 13:
-			cout << "Сортировать по:" << endl;
-			cout << "1) Возрастанию \n2) Убыванию\n";
+		case 5:
+			cout << "Выберите команду:" << endl;
+			cout << "1) Добавить стандартную программу" << endl;
+			cout << "2) Ввести данные с клавиатуры" << endl;
+			cout << "3) Вернуться к выбору" << endl;
+			cout << "======================================" << endl;
 			cout << "Ваш выбор: ";
-			cin >> value;
+			cin >> choise2;
+			cout << endl;
 
-			if (value == 1) list.sort(list.sortAsc);
-			if (value == 2) list.sort(list.sortDesc);
-			else
+			switch (choise2)
 			{
-				cout << "Ошибка. Неверный номер команды." << endl;
+			case 1:
+				list.addEl(newProgram);
+				break;
+
+			case 2:
+				list.enterNewEl();
+				break;
+
+			case 3:
+				break;
+
+			default:
+				cout << "Неверный символ. Повторите попытку." << endl;
 				break;
 			}
 
 			break;
+
+		case 6:
+			cout << "Завершение работы." << endl;
+			stop = 0;
+			break;
+
 		default:
 			cout << "Неверный символ. Повторите попытку." << endl;
 			break;
+
 		}
 	}
+
+	author.deleteList();
 	return;
 }

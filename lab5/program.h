@@ -43,9 +43,8 @@ private:
 	bool trojan;			//trojan(yes or no)
 	string name;			//name of program
 	CAuthor author;			//creator of program
-public:
 	CDate date;				//date of creating program
-	
+public:
 	int getTime() const;
 	int getSize() const;
 	int getLines() const;
@@ -69,7 +68,7 @@ public:
 	void setAuthor(const string);
 
 	C_Program();
-	C_Program(bool, int, int, int, int, string);
+	C_Program(bool, int, int, int, int, string, CAuthor, sint, sint, sint);
 	C_Program(const C_Program& other);
 	~C_Program();
 };

@@ -1,5 +1,7 @@
 #include "program.h"
 #include "list.h"
+#include "author.h"
+#include "date.h"
 
 void Test_GetProgramID(CList&);
 void Test_AddEl(CList&);
@@ -8,22 +10,24 @@ void Test_Task(CList&);
 void Test_Stringstream(CList&);
 void Test_ReadFile(CList&);
 void Test_RegexTask(CList&);
+void Test_Sort(CList&);
 
 int main() {
     setlocale(LC_ALL, "Rus");
-    CList List;
-    List.createList(5);
+    CList list;
+    list.createList(5);
 
-    Test_GetProgramID(List);
-    Test_AddEl(List);
-    Test_DelEl(List);
-    Test_Task(List);
-    Test_Stringstream(List);
-    Test_ReadFile(List);
-    Test_RegexTask(List);
-    
+    Test_GetProgramID(list);
+    Test_AddEl(list);
+    Test_DelEl(list);
+    Test_Task(list);
+    Test_Stringstream(list);
+    Test_ReadFile(list);
+    Test_RegexTask(list);
+    Test_Sort(list);
+
     if (_CrtDumpMemoryLeaks()) cout << "\n\nЕсть утечка памяти.\n\n";
-    else cout << "\n\nУтечка памяти отсутствует\n\n.";
+    else cout << "\n\nУтечка памяти отсутствует.\n\n";
 
     return 0;
 }
@@ -49,8 +53,8 @@ void Test_DelEl(CList& list)
     int size = list.getListSize();
     list.deleteEl(3);
 
-    if (size > list.getListSize()) cout << "Тест функции удаления\t\t выполнен успешно.\n\n";
-    else cout << "Тест функции удаления\t\t не выполнен успешно.\n\n";
+    if (size > list.getListSize()) cout << "Тест функции удаления\t\t\t выполнен успешно.\n\n";
+    else cout << "Тест функции удаления\t\t\t не выполнен успешно.\n\n";
 }
 void Test_Task(CList& list)
 {
@@ -63,7 +67,7 @@ void Test_Task(CList& list)
 }
 void Test_Stringstream(CList& list)
 {
-    string nameExpected = "Skype";
+    string nameExpected = "1234";
     stringstream funcResult = list.getOneEl(1);
     string nameReal;
     funcResult >> nameReal;
@@ -86,4 +90,15 @@ void Test_RegexTask(CList& list)
 {
     cout << "Здесь должны быть программы, содержащие в названии больше 2 слов:" << endl;
     list.regexTask();
+}
+void Test_Sort(CList& list)
+{
+    int beforeSorting = list.list[0].getLines();
+    list.sort(list.sortDesc);
+    int afterSorting = list.list[0].getLines();
+    int expected = 666;
+
+    if (beforeSorting != afterSorting && afterSorting == expected) cout << "Тест функции сортировки\t\t\t выполнен успешно." << endl;
+    else cout << "Тест функции сортировки\t\t\t не выполнен успешно." << endl;
+ 
 }

@@ -21,6 +21,10 @@ string* CAuthor::createList(int size)
 	
 	return list;
 }
+void CAuthor::deleteList()
+{
+	delete[] list;
+}
 
 string CAuthor::authors(int value)
 {
@@ -30,22 +34,20 @@ string CAuthor::authors(int value)
 	{
 	case 1:
 		author = { "Microsoft" };
-		break;
+		return author;
 	case 2:
 		author = { "Lambda" };
-		break;
+		return author;
 	case 3:
 		author = { "AMD" };
-		break;
+		return author;
 	case 4:
 		author = { "Logitech" };
-		break;
+		return author;
 	default:
-		string standartAuthor;
-		return standartAuthor;
+		return author;
 	}
 
-	return author;
 }
 
 CAuthor::CAuthor() : companyName("IBM") {}
