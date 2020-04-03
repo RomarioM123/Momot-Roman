@@ -8,16 +8,16 @@ class CAuthor {
 private:
 	string companyName;
 	int listSize;
-	string* list;
+	CAuthor* list;
 
 public:
 	void setAuthor(const string);
 	string getAuthor()const;
 
-	string* createList(int size);
+	CAuthor* createList(int size);
 	void deleteList();
 
-	string authors(int value);
+	CAuthor authors(int value);
 
 	CAuthor();
 	CAuthor(string author);

@@ -1,12 +1,12 @@
 #include "list.h"
 
-void CList::createList(int value)
+void CList::createList(int value, CAuthor* authors)
 {
 	listSize = value;
 	list = new C_Program[listSize];
 
 	for (size_t i = 0; i < listSize; i++)
-		list[i] = programs(i);
+		list[i] = programs(i, authors);
 }
 
 void CList::setListSize(int size) { listSize = size; }
@@ -316,30 +316,30 @@ C_Program CList::getProgramID(int id) const
 	cout << "\nПрограммы с таким ID нету.\n" << endl;
 	return newProgram;
 }
-C_Program CList::programs(int valueX)
+C_Program CList::programs(int valueX, CAuthor* authors)
 {
 	C_Program standartProgram;
 
-	if (valueX == 1)
+	if (valueX == 0)
 	{
-		C_Program Program1(true, 222, 222, 222, 1234, "Skype", (CAuthor)"Microsoft", 2, 12, 2002);
+		C_Program Program1(true, 222, 222, 222, 1234, "Skype", *(authors), 2, 12, 2002);
 		return Program1;
 
 		return Program1;
 	}
+	else if (valueX == 1)
+	{
+		C_Program Program2(true, 333, 333, 666, 5678, "Standart Calculator", *(authors + 1), 13, 3, 1993);
+		return Program2;
+	}
 	else if (valueX == 2)
 	{
-		C_Program Program2(true, 333, 333, 666, 5678, "Standart Calculator", (CAuthor)"Bethesda", 13, 3, 1993);
-		return Program2;
+		C_Program Program3(false, 444, 444, 444, 9532, "Domino Super", *(authors + 2), 14, 4, 1944);
+		return Program3;
 	}
 	else if (valueX == 3)
 	{
-		C_Program Program3(false, 444, 444, 444, 9532, "Domino Super", (CAuthor)"Aida", 14, 4, 1944);
-		return Program3;
-	}
-	else if (valueX == 4)
-	{
-		C_Program Program4(false, 555, 555, 555, 4356, "Text editor", (CAuthor)"Google", 5, 5, 1995);
+		C_Program Program4(false, 555, 555, 555, 4356, "Text editor", *(authors + 3), 5, 5, 1995);
 		return Program4;
 	}
 	return standartProgram;
@@ -409,6 +409,7 @@ void CList::regexTask()
 
 	cout << endl;
 }
+
 bool CList::sortAsc(const int& a, const int& b) { return a > b; }
 bool CList::sortDesc(const int& a, const int& b) { return a < b; }
 void CList::sort(comp condition)

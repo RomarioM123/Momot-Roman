@@ -11,7 +11,7 @@ public:
 	void setListSize(int);
 	int getListSize() const;
 	
-	void createList(int);
+	void createList(int, CAuthor*);
 	void printAll() const;
 	void printOneEl(int) const;
 	void addEl(C_Program&);
@@ -30,6 +30,6 @@ public:
 	static bool sortDesc(const int&, const int&);
 
 	C_Program getProgramID(int)const;
-	C_Program programs(int);
+	C_Program programs(int, CAuthor*);
 	~CList();
 };

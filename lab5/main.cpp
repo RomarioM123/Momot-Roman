@@ -20,7 +20,7 @@ void menu()
 {
 	CList list;					//список элементов
 	CAuthor author;				//переменная поля автор
-	string* listAuthor;
+	CAuthor* listAuthors;		//список авторов
 	C_Program getProgram;		//программа, которая вернётся при получении ID
 	C_Program newProgram;		//программа для добавления в список
 	auto choise = 1, choise2 = 0;
@@ -29,8 +29,8 @@ void menu()
 	string::size_type n;
 	stringstream str;
 	int size;					//количество элементов больше определённого размера
-	listAuthor = author.createList(4);
-	list.createList(4);
+	listAuthors = author.createList(4);
+	list.createList(4, listAuthors);
 
 	cout << endl << "Выберите команду для работы со списком: ";
 	while (stop != 0)
@@ -108,6 +108,7 @@ void menu()
 			{
 			case 1:
 				list.printAll();
+
 				break;
 
 			case 2:

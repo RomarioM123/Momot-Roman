@@ -9,45 +9,46 @@ void CAuthor::setAuthor(string name)
 	companyName = name;
 }
 
-string* CAuthor::createList(int size)
+CAuthor* CAuthor::createList(int size)
 {
+	list = new CAuthor[size];
 	listSize = size;
-	list = new string[size];
 
 	for (size_t i = 0; i < size; i++)
 	{
 		list[i] = authors(i);
 	}
-	
+
 	return list;
 }
+
 void CAuthor::deleteList()
 {
 	delete[] list;
 }
 
-string CAuthor::authors(int value)
+CAuthor CAuthor::authors(int value)
 {
-	string author;
-
-	switch (value)
+	if (value == 0)
 	{
-	case 1:
-		author = { "Microsoft" };
+		CAuthor author("Oracle");
 		return author;
-	case 2:
-		author = { "Lambda" };
-		return author;
-	case 3:
-		author = { "AMD" };
-		return author;
-	case 4:
-		author = { "Logitech" };
-		return author;
-	default:
-		return author;
+	} 
+	else if (value == 1) 
+	{
+		CAuthor author2("Lambda");
+		return author2;
+	} 
+	else if (value == 2) 
+	{
+		CAuthor author3("AMD");
+		return author3;
 	}
-
+	else if (value == 3) 
+	{
+		CAuthor author4("Logitech");
+		return author4;
+	}
 }
 
 CAuthor::CAuthor() : companyName("IBM") {}
