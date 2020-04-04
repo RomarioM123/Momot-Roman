@@ -1,0 +1,22 @@
+digraph "C_Program"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="12",labelfontname="Helvetica",labelfontsize="12"];
+  node [fontname="Helvetica",fontsize="12",shape=record];
+  Node1 [label="{C_Program\n||+ getTime()\l+ getSize()\l+ getLines()\l+ getIndex()\l+ getInternet()\l+ getName()\l+ getDay()\l+ getMonth()\l+ getYear()\l+ getAuthor()\lі ще  14...\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [color="grey25",fontsize="12",style="solid",label=" #timeOfWork\n#size\n#amountOfLines\n#index" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{int\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node3 -> Node1 [color="grey25",fontsize="12",style="solid",label=" #name" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 [label="{string\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node4 -> Node1 [color="grey25",fontsize="12",style="solid",label=" #useInternet" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node4 [label="{bool\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node5 -> Node1 [color="grey25",fontsize="12",style="solid",label=" #date" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node5 [label="{CDate\n||+ setDay()\l+ setMonth()\l+ setYear()\l+ getDay()\l+ getMonth()\l+ getYear()\l+ CDate()\l+ CDate()\l+ CDate()\l+ ~CDate()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_c_date.html",tooltip=" "];
+  Node6 -> Node5 [color="grey25",fontsize="12",style="solid",label=" -month\n-year\n-day" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node6 [label="{short\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node7 -> Node1 [color="grey25",fontsize="12",style="solid",label=" #author" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node7 [label="{CAuthor\n||+ setAuthor()\l+ getAuthor()\l+ createList()\l+ deleteList()\l+ authors()\l+ CAuthor()\l+ CAuthor()\l+ CAuthor()\l+ ~CAuthor()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_c_author.html",tooltip=" "];
+  Node2 -> Node7 [color="grey25",fontsize="12",style="solid",label=" -listSize" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 -> Node7 [color="grey25",fontsize="12",style="solid",label=" -companyName" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node7 -> Node7 [color="grey25",fontsize="12",style="solid",label=" -list" ,arrowhead="odiamond",fontname="Helvetica"];
+}

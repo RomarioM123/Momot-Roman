@@ -1,0 +1,16 @@
+digraph "Test_ReadFile"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="12",labelfontname="Helvetica",labelfontsize="12"];
+  node [fontname="Helvetica",fontsize="12",shape=record];
+  rankdir="LR";
+  Node1 [label="Test_ReadFile",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="12",style="solid",fontname="Helvetica"];
+  Node2 [label="CMalware::getType",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_c_malware.html#adbf45c9379499c86525d44c215fdcce5",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="12",style="solid",fontname="Helvetica"];
+  Node3 [label="MalwareList::readFile",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_malware_list.html#a18c0925c9efe0ac185527a7715b25bf4",tooltip=" "];
+  Node3 -> Node4 [color="midnightblue",fontsize="12",style="solid",fontname="Helvetica"];
+  Node4 [label="MalwareList::linesInFile",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_malware_list.html#a26f09e384677c98a89bd5ab78d08e0c5",tooltip=" "];
+  Node3 -> Node5 [color="midnightblue",fontsize="12",style="solid",fontname="Helvetica"];
+  Node5 [label="MalwareList::setListSize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_malware_list.html#a8ca4f5586273a2172b0a818585d5c99c",tooltip=" "];
+}

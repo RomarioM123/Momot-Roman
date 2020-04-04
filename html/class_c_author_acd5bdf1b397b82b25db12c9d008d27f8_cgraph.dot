@@ -1,0 +1,10 @@
+digraph "CAuthor::createList"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="12",labelfontname="Helvetica",labelfontsize="12"];
+  node [fontname="Helvetica",fontsize="12",shape=record];
+  rankdir="LR";
+  Node1 [label="CAuthor::createList",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="12",style="solid",fontname="Helvetica"];
+  Node2 [label="CAuthor::authors",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_c_author.html#a529a6fd55cb713bd7275c13f23843258",tooltip=" "];
+}

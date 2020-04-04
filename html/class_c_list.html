@@ -1,0 +1,780 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Lab7: Клас CList</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Lab7
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Створено системою Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','Пошук');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Загальнодоступні елементи</a> &#124;
+<a href="#pub-static-methods">Загальнодоступні статичні елементи</a> &#124;
+<a href="#pub-attribs">Загальнодоступні атрибути</a> &#124;
+<a href="#pri-attribs">Приватні дані</a> &#124;
+<a href="class_c_list-members.html">Список всіх елементів</a>  </div>
+  <div class="headertitle">
+<div class="title">Клас CList</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="program_list_8h_source.html">programList.h</a>&gt;</code></p>
+<div class="dynheader">
+Діаграма зв'язків класу CList:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_list__coll__graph.png" border="0" usemap="#_c_list_coll__map" alt="Collaboration graph"/></div>
+<map name="_c_list_coll__map" id="_c_list_coll__map">
+<area shape="rect" title=" " alt="" coords="5,821,128,1115"/>
+<area shape="rect" href="class_c___program.html" title=" " alt="" coords="279,497,396,756"/>
+<area shape="rect" title=" " alt="" coords="23,5,62,91"/>
+<area shape="rect" href="class_c_author.html" title=" " alt="" coords="181,199,296,423"/>
+<area shape="rect" title=" " alt="" coords="294,5,354,91"/>
+<area shape="rect" title=" " alt="" coords="475,269,527,354"/>
+<area shape="rect" href="class_c_date.html" title=" " alt="" coords="559,191,668,432"/>
+<area shape="rect" title=" " alt="" coords="585,5,641,91"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Загальнодоступні елементи</h2></td></tr>
+<tr class="memitem:aa8e2900d4ccca6724ce51da219544013"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_list.html#aa8e2900d4ccca6724ce51da219544013">setListSize</a> (int)</td></tr>
+<tr class="separator:aa8e2900d4ccca6724ce51da219544013"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a5a711d30ef7a16260ef5d4041e95b5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_list.html#a8a5a711d30ef7a16260ef5d4041e95b5">getListSize</a> () const</td></tr>
+<tr class="separator:a8a5a711d30ef7a16260ef5d4041e95b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeace5622d9178259c4d190ded89b99c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_list.html#aeace5622d9178259c4d190ded89b99c9">createList</a> (int, <a class="el" href="class_c_author.html">CAuthor</a> *)</td></tr>
+<tr class="separator:aeace5622d9178259c4d190ded89b99c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab42a1db140f387514880eaf7dcaf30eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_list.html#ab42a1db140f387514880eaf7dcaf30eb">printAll</a> () const</td></tr>
+<tr class="separator:ab42a1db140f387514880eaf7dcaf30eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab41616f89921a91b64f0bd4afc1c2115"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_list.html#ab41616f89921a91b64f0bd4afc1c2115">printOneEl</a> (int) const</td></tr>
+<tr class="separator:ab41616f89921a91b64f0bd4afc1c2115"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e4dfb6e3f048741737f5f9383dfcf24"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_list.html#a3e4dfb6e3f048741737f5f9383dfcf24">addEl</a> (<a class="el" href="class_c___program.html">C_Program</a> &amp;)</td></tr>
+<tr class="separator:a3e4dfb6e3f048741737f5f9383dfcf24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41169e72d3f2cd5d9042d4a248356972"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_list.html#a41169e72d3f2cd5d9042d4a248356972">deleteEl</a> (int)</td></tr>
+<tr class="separator:a41169e72d3f2cd5d9042d4a248356972"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83b61e2329868a071b56adb811a4e404"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_list.html#a83b61e2329868a071b56adb811a4e404">task</a> (int)</td></tr>
+<tr class="separator:a83b61e2329868a071b56adb811a4e404"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa830103cdcbee5ad97f2317824dc52f4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_list.html#aa830103cdcbee5ad97f2317824dc52f4">linesInFile</a> (string)</td></tr>
+<tr class="separator:aa830103cdcbee5ad97f2317824dc52f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa37d47ccb14a0b04a6ce4f3724c88d3e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_list.html#aa37d47ccb14a0b04a6ce4f3724c88d3e">readFile</a> (string)</td></tr>
+<tr class="separator:aa37d47ccb14a0b04a6ce4f3724c88d3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a402b8e568cd9a9f25a511c1eefd12c09"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_list.html#a402b8e568cd9a9f25a511c1eefd12c09">saveToFile</a> (string)</td></tr>
+<tr class="separator:a402b8e568cd9a9f25a511c1eefd12c09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fed4118f30c42e5e73db0ab23cc68ff"><td class="memItemLeft" align="right" valign="top">stringstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_list.html#a8fed4118f30c42e5e73db0ab23cc68ff">getOneEl</a> (int) const</td></tr>
+<tr class="separator:a8fed4118f30c42e5e73db0ab23cc68ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fc3c4545877f04774e1e283cc902c37"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_list.html#a1fc3c4545877f04774e1e283cc902c37">showOneEl</a> (stringstream &amp;) const</td></tr>
+<tr class="separator:a1fc3c4545877f04774e1e283cc902c37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b7bcff9c3a2358f66fa50711164c9cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_list.html#a7b7bcff9c3a2358f66fa50711164c9cf">enterNewEl</a> ()</td></tr>
+<tr class="separator:a7b7bcff9c3a2358f66fa50711164c9cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f1209c0e393f3c1a83db11a3559650f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_list.html#a6f1209c0e393f3c1a83db11a3559650f">regexTask</a> ()</td></tr>
+<tr class="separator:a6f1209c0e393f3c1a83db11a3559650f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d1444ffcafc969a82d30e3855ca03b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_list.html#a7d1444ffcafc969a82d30e3855ca03b4">sort</a> (<a class="el" href="program_8h.html#a27226d579a1e813b298284345d2c3f4f">comp</a>)</td></tr>
+<tr class="separator:a7d1444ffcafc969a82d30e3855ca03b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1293eb6aa910c0df27f2f9c8190276d9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_c___program.html">C_Program</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_list.html#a1293eb6aa910c0df27f2f9c8190276d9">getProgramID</a> (int) const</td></tr>
+<tr class="separator:a1293eb6aa910c0df27f2f9c8190276d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a571cef43a7efa341aa1b2aea7de52945"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_c___program.html">C_Program</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_list.html#a571cef43a7efa341aa1b2aea7de52945">programs</a> (int, <a class="el" href="class_c_author.html">CAuthor</a> *)</td></tr>
+<tr class="separator:a571cef43a7efa341aa1b2aea7de52945"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34a40e8ab96400a4ec186b29de56da5a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_list.html#a34a40e8ab96400a4ec186b29de56da5a">~CList</a> ()</td></tr>
+<tr class="separator:a34a40e8ab96400a4ec186b29de56da5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Загальнодоступні статичні елементи</h2></td></tr>
+<tr class="memitem:a08553fcc092fd6c63a6af647403d8676"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_list.html#a08553fcc092fd6c63a6af647403d8676">sortAsc</a> (const int &amp;, const int &amp;)</td></tr>
+<tr class="separator:a08553fcc092fd6c63a6af647403d8676"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70e04dfd790e1611c5024da6b1aaa325"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_list.html#a70e04dfd790e1611c5024da6b1aaa325">sortDesc</a> (const int &amp;, const int &amp;)</td></tr>
+<tr class="separator:a70e04dfd790e1611c5024da6b1aaa325"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Загальнодоступні атрибути</h2></td></tr>
+<tr class="memitem:a8127fd5691a4f745e831d729e6175a66"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_c___program.html">C_Program</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_list.html#a8127fd5691a4f745e831d729e6175a66">list</a></td></tr>
+<tr class="separator:a8127fd5691a4f745e831d729e6175a66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Приватні дані</h2></td></tr>
+<tr class="memitem:a5b0c113a11ea4783cb2a007c1ca47e6d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_list.html#a5b0c113a11ea4783cb2a007c1ca47e6d">listSize</a></td></tr>
+<tr class="separator:a5b0c113a11ea4783cb2a007c1ca47e6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Конструктор(и)</h2>
+<a id="a34a40e8ab96400a4ec186b29de56da5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34a40e8ab96400a4ec186b29de56da5a">&#9670;&nbsp;</a></span>~CList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CList::~CList </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Опис методів компонент</h2>
+<a id="a3e4dfb6e3f048741737f5f9383dfcf24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e4dfb6e3f048741737f5f9383dfcf24">&#9670;&nbsp;</a></span>addEl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CList::addEl </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_c___program.html">C_Program</a> &amp;&#160;</td>
+          <td class="paramname"><em>newProgram</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aeace5622d9178259c4d190ded89b99c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeace5622d9178259c4d190ded89b99c9">&#9670;&nbsp;</a></span>createList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CList::createList </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_c_author.html">CAuthor</a> *&#160;</td>
+          <td class="paramname"><em>authors</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Граф всіх викликів цієї функції:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_list_aeace5622d9178259c4d190ded89b99c9_cgraph.png" border="0" usemap="#class_c_list_aeace5622d9178259c4d190ded89b99c9_cgraph" alt=""/></div>
+<map name="class_c_list_aeace5622d9178259c4d190ded89b99c9_cgraph" id="class_c_list_aeace5622d9178259c4d190ded89b99c9_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,141,35"/>
+<area shape="rect" href="class_c_list.html#a571cef43a7efa341aa1b2aea7de52945" title=" " alt="" coords="189,5,324,35"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a41169e72d3f2cd5d9042d4a248356972"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41169e72d3f2cd5d9042d4a248356972">&#9670;&nbsp;</a></span>deleteEl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CList::deleteEl </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7b7bcff9c3a2358f66fa50711164c9cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b7bcff9c3a2358f66fa50711164c9cf">&#9670;&nbsp;</a></span>enterNewEl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CList::enterNewEl </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Граф всіх викликів цієї функції:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_list_a7b7bcff9c3a2358f66fa50711164c9cf_cgraph.png" border="0" usemap="#class_c_list_a7b7bcff9c3a2358f66fa50711164c9cf_cgraph" alt=""/></div>
+<map name="class_c_list_a7b7bcff9c3a2358f66fa50711164c9cf_cgraph" id="class_c_list_a7b7bcff9c3a2358f66fa50711164c9cf_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,152,35"/>
+<area shape="rect" href="class_c_list.html#a3e4dfb6e3f048741737f5f9383dfcf24" title=" " alt="" coords="200,5,308,35"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8a5a711d30ef7a16260ef5d4041e95b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a5a711d30ef7a16260ef5d4041e95b5">&#9670;&nbsp;</a></span>getListSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CList::getListSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8fed4118f30c42e5e73db0ab23cc68ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fed4118f30c42e5e73db0ab23cc68ff">&#9670;&nbsp;</a></span>getOneEl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">stringstream CList::getOneEl </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Граф всіх викликів цієї функції:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_list_a8fed4118f30c42e5e73db0ab23cc68ff_cgraph.png" border="0" usemap="#class_c_list_a8fed4118f30c42e5e73db0ab23cc68ff_cgraph" alt=""/></div>
+<map name="class_c_list_a8fed4118f30c42e5e73db0ab23cc68ff_cgraph" id="class_c_list_a8fed4118f30c42e5e73db0ab23cc68ff_cgraph">
+<area shape="rect" title=" " alt="" coords="5,245,137,275"/>
+<area shape="rect" href="class_c___program.html#af7d01ee17677a85643fde2c9506b612c" title=" " alt="" coords="188,5,367,35"/>
+<area shape="rect" href="class_c___program.html#a8f248e2c1325e93b9fa81b38db79c9a5" title=" " alt="" coords="196,59,359,88"/>
+<area shape="rect" href="class_c___program.html#aa4b56d0ff0b46ff3455c557adc2722f6" title=" " alt="" coords="192,112,363,141"/>
+<area shape="rect" href="class_c___program.html#ae8e9f4799817f31736f9e496cbca692f" title=" " alt="" coords="185,165,369,195"/>
+<area shape="rect" href="class_c___program.html#a4c4371f5d6a0da93321647a432caab9a" title=" " alt="" coords="191,219,363,248"/>
+<area shape="rect" href="class_c___program.html#a296e135ed8df8b540b1ea008f6624211" title=" " alt="" coords="189,272,365,301"/>
+<area shape="rect" href="class_c___program.html#a3b4231c75132f78b63e10c5c63951b72" title=" " alt="" coords="189,325,365,355"/>
+<area shape="rect" href="class_c___program.html#a10d7c2efddfae0c80de6abd4fc41ac3c" title=" " alt="" coords="195,379,360,408"/>
+<area shape="rect" href="class_c___program.html#abccae9277a34642cbb5a52bafd1fca99" title=" " alt="" coords="193,432,362,461"/>
+<area shape="rect" href="class_c___program.html#a238a2fb27df21ca08a85aee0d61497d4" title=" " alt="" coords="194,485,361,515"/>
+<area shape="rect" href="class_c_author.html#a891a8c504fa138e9a83c49674190ad92" title=" " alt="" coords="417,5,572,35"/>
+<area shape="rect" href="class_c_date.html#a571bfc9b668f9cb57151f22f3ec8897c" title=" " alt="" coords="431,59,558,88"/>
+<area shape="rect" href="class_c_date.html#a69be2cf9d07bfe1db768044e5ea9ce3f" title=" " alt="" coords="425,272,565,301"/>
+<area shape="rect" href="class_c_date.html#a33c54197a9cbf71d017fc12778fefc59" title=" " alt="" coords="429,485,560,515"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1293eb6aa910c0df27f2f9c8190276d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1293eb6aa910c0df27f2f9c8190276d9">&#9670;&nbsp;</a></span>getProgramID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_c___program.html">C_Program</a> CList::getProgramID </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Граф всіх викликів цієї функції:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_list_a1293eb6aa910c0df27f2f9c8190276d9_cgraph.png" border="0" usemap="#class_c_list_a1293eb6aa910c0df27f2f9c8190276d9_cgraph" alt=""/></div>
+<map name="class_c_list_a1293eb6aa910c0df27f2f9c8190276d9_cgraph" id="class_c_list_a1293eb6aa910c0df27f2f9c8190276d9_cgraph">
+<area shape="rect" title=" " alt="" coords="5,192,171,221"/>
+<area shape="rect" href="class_c_list.html#ab41616f89921a91b64f0bd4afc1c2115" title=" " alt="" coords="219,192,359,221"/>
+<area shape="rect" href="class_c___program.html#af7d01ee17677a85643fde2c9506b612c" title=" " alt="" coords="409,5,588,35"/>
+<area shape="rect" href="class_c___program.html#aa4b56d0ff0b46ff3455c557adc2722f6" title=" " alt="" coords="413,59,584,88"/>
+<area shape="rect" href="class_c___program.html#ae8e9f4799817f31736f9e496cbca692f" title=" " alt="" coords="407,112,591,141"/>
+<area shape="rect" href="class_c___program.html#a4c4371f5d6a0da93321647a432caab9a" title=" " alt="" coords="413,165,585,195"/>
+<area shape="rect" href="class_c___program.html#a3b4231c75132f78b63e10c5c63951b72" title=" " alt="" coords="411,219,587,248"/>
+<area shape="rect" href="class_c___program.html#a10d7c2efddfae0c80de6abd4fc41ac3c" title=" " alt="" coords="416,272,581,301"/>
+<area shape="rect" href="class_c___program.html#abccae9277a34642cbb5a52bafd1fca99" title=" " alt="" coords="414,325,583,355"/>
+<area shape="rect" href="class_c___program.html#a238a2fb27df21ca08a85aee0d61497d4" title=" " alt="" coords="415,379,582,408"/>
+<area shape="rect" href="class_c_author.html#a891a8c504fa138e9a83c49674190ad92" title=" " alt="" coords="639,5,793,35"/>
+<area shape="rect" href="class_c_date.html#a33c54197a9cbf71d017fc12778fefc59" title=" " alt="" coords="651,379,781,408"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa830103cdcbee5ad97f2317824dc52f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa830103cdcbee5ad97f2317824dc52f4">&#9670;&nbsp;</a></span>linesInFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CList::linesInFile </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>filename</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab42a1db140f387514880eaf7dcaf30eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab42a1db140f387514880eaf7dcaf30eb">&#9670;&nbsp;</a></span>printAll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CList::printAll </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Граф всіх викликів цієї функції:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_list_ab42a1db140f387514880eaf7dcaf30eb_cgraph.png" border="0" usemap="#class_c_list_ab42a1db140f387514880eaf7dcaf30eb_cgraph" alt=""/></div>
+<map name="class_c_list_ab42a1db140f387514880eaf7dcaf30eb_cgraph" id="class_c_list_ab42a1db140f387514880eaf7dcaf30eb_cgraph">
+<area shape="rect" title=" " alt="" coords="5,192,120,221"/>
+<area shape="rect" href="class_c_list.html#ab41616f89921a91b64f0bd4afc1c2115" title=" " alt="" coords="168,192,308,221"/>
+<area shape="rect" href="class_c___program.html#af7d01ee17677a85643fde2c9506b612c" title=" " alt="" coords="359,5,537,35"/>
+<area shape="rect" href="class_c___program.html#aa4b56d0ff0b46ff3455c557adc2722f6" title=" " alt="" coords="363,59,533,88"/>
+<area shape="rect" href="class_c___program.html#ae8e9f4799817f31736f9e496cbca692f" title=" " alt="" coords="356,112,540,141"/>
+<area shape="rect" href="class_c___program.html#a4c4371f5d6a0da93321647a432caab9a" title=" " alt="" coords="362,165,534,195"/>
+<area shape="rect" href="class_c___program.html#a3b4231c75132f78b63e10c5c63951b72" title=" " alt="" coords="360,219,536,248"/>
+<area shape="rect" href="class_c___program.html#a10d7c2efddfae0c80de6abd4fc41ac3c" title=" " alt="" coords="365,272,531,301"/>
+<area shape="rect" href="class_c___program.html#abccae9277a34642cbb5a52bafd1fca99" title=" " alt="" coords="363,325,533,355"/>
+<area shape="rect" href="class_c___program.html#a238a2fb27df21ca08a85aee0d61497d4" title=" " alt="" coords="365,379,531,408"/>
+<area shape="rect" href="class_c_author.html#a891a8c504fa138e9a83c49674190ad92" title=" " alt="" coords="588,5,743,35"/>
+<area shape="rect" href="class_c_date.html#a33c54197a9cbf71d017fc12778fefc59" title=" " alt="" coords="600,379,731,408"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab41616f89921a91b64f0bd4afc1c2115"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab41616f89921a91b64f0bd4afc1c2115">&#9670;&nbsp;</a></span>printOneEl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CList::printOneEl </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>number</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Граф всіх викликів цієї функції:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_list_ab41616f89921a91b64f0bd4afc1c2115_cgraph.png" border="0" usemap="#class_c_list_ab41616f89921a91b64f0bd4afc1c2115_cgraph" alt=""/></div>
+<map name="class_c_list_ab41616f89921a91b64f0bd4afc1c2115_cgraph" id="class_c_list_ab41616f89921a91b64f0bd4afc1c2115_cgraph">
+<area shape="rect" title=" " alt="" coords="5,192,145,221"/>
+<area shape="rect" href="class_c___program.html#af7d01ee17677a85643fde2c9506b612c" title=" " alt="" coords="196,5,375,35"/>
+<area shape="rect" href="class_c___program.html#aa4b56d0ff0b46ff3455c557adc2722f6" title=" " alt="" coords="200,59,371,88"/>
+<area shape="rect" href="class_c___program.html#ae8e9f4799817f31736f9e496cbca692f" title=" " alt="" coords="193,112,377,141"/>
+<area shape="rect" href="class_c___program.html#a4c4371f5d6a0da93321647a432caab9a" title=" " alt="" coords="199,165,371,195"/>
+<area shape="rect" href="class_c___program.html#a3b4231c75132f78b63e10c5c63951b72" title=" " alt="" coords="197,219,373,248"/>
+<area shape="rect" href="class_c___program.html#a10d7c2efddfae0c80de6abd4fc41ac3c" title=" " alt="" coords="203,272,368,301"/>
+<area shape="rect" href="class_c___program.html#abccae9277a34642cbb5a52bafd1fca99" title=" " alt="" coords="201,325,370,355"/>
+<area shape="rect" href="class_c___program.html#a238a2fb27df21ca08a85aee0d61497d4" title=" " alt="" coords="202,379,369,408"/>
+<area shape="rect" href="class_c_author.html#a891a8c504fa138e9a83c49674190ad92" title=" " alt="" coords="425,5,580,35"/>
+<area shape="rect" href="class_c_date.html#a33c54197a9cbf71d017fc12778fefc59" title=" " alt="" coords="437,379,568,408"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a571cef43a7efa341aa1b2aea7de52945"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a571cef43a7efa341aa1b2aea7de52945">&#9670;&nbsp;</a></span>programs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_c___program.html">C_Program</a> CList::programs </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>valueX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_c_author.html">CAuthor</a> *&#160;</td>
+          <td class="paramname"><em>authors</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa37d47ccb14a0b04a6ce4f3724c88d3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa37d47ccb14a0b04a6ce4f3724c88d3e">&#9670;&nbsp;</a></span>readFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CList::readFile </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>filename</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Граф всіх викликів цієї функції:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_list_aa37d47ccb14a0b04a6ce4f3724c88d3e_cgraph.png" border="0" usemap="#class_c_list_aa37d47ccb14a0b04a6ce4f3724c88d3e_cgraph" alt=""/></div>
+<map name="class_c_list_aa37d47ccb14a0b04a6ce4f3724c88d3e_cgraph" id="class_c_list_aa37d47ccb14a0b04a6ce4f3724c88d3e_cgraph">
+<area shape="rect" title=" " alt="" coords="5,32,131,61"/>
+<area shape="rect" href="class_c_list.html#aa830103cdcbee5ad97f2317824dc52f4" title=" " alt="" coords="183,5,319,35"/>
+<area shape="rect" href="class_c_list.html#aa8e2900d4ccca6724ce51da219544013" title=" " alt="" coords="179,59,323,88"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6f1209c0e393f3c1a83db11a3559650f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f1209c0e393f3c1a83db11a3559650f">&#9670;&nbsp;</a></span>regexTask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CList::regexTask </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Граф всіх викликів цієї функції:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_list_a6f1209c0e393f3c1a83db11a3559650f_cgraph.png" border="0" usemap="#class_c_list_a6f1209c0e393f3c1a83db11a3559650f_cgraph" alt=""/></div>
+<map name="class_c_list_a6f1209c0e393f3c1a83db11a3559650f_cgraph" id="class_c_list_a6f1209c0e393f3c1a83db11a3559650f_cgraph">
+<area shape="rect" title=" " alt="" coords="5,165,145,195"/>
+<area shape="rect" href="class_c_list.html#a8a5a711d30ef7a16260ef5d4041e95b5" title=" " alt="" coords="193,139,339,168"/>
+<area shape="rect" href="class_c_list.html#ab41616f89921a91b64f0bd4afc1c2115" title=" " alt="" coords="196,192,336,221"/>
+<area shape="rect" href="class_c___program.html#af7d01ee17677a85643fde2c9506b612c" title=" " alt="" coords="389,5,568,35"/>
+<area shape="rect" href="class_c___program.html#aa4b56d0ff0b46ff3455c557adc2722f6" title=" " alt="" coords="393,59,564,88"/>
+<area shape="rect" href="class_c___program.html#ae8e9f4799817f31736f9e496cbca692f" title=" " alt="" coords="387,112,571,141"/>
+<area shape="rect" href="class_c___program.html#a4c4371f5d6a0da93321647a432caab9a" title=" " alt="" coords="393,165,565,195"/>
+<area shape="rect" href="class_c___program.html#a3b4231c75132f78b63e10c5c63951b72" title=" " alt="" coords="391,219,567,248"/>
+<area shape="rect" href="class_c___program.html#a10d7c2efddfae0c80de6abd4fc41ac3c" title=" " alt="" coords="396,272,561,301"/>
+<area shape="rect" href="class_c___program.html#abccae9277a34642cbb5a52bafd1fca99" title=" " alt="" coords="394,325,563,355"/>
+<area shape="rect" href="class_c___program.html#a238a2fb27df21ca08a85aee0d61497d4" title=" " alt="" coords="395,379,562,408"/>
+<area shape="rect" href="class_c_author.html#a891a8c504fa138e9a83c49674190ad92" title=" " alt="" coords="619,5,773,35"/>
+<area shape="rect" href="class_c_date.html#a33c54197a9cbf71d017fc12778fefc59" title=" " alt="" coords="631,379,761,408"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a402b8e568cd9a9f25a511c1eefd12c09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a402b8e568cd9a9f25a511c1eefd12c09">&#9670;&nbsp;</a></span>saveToFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CList::saveToFile </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>filename</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Граф всіх викликів цієї функції:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_list_a402b8e568cd9a9f25a511c1eefd12c09_cgraph.png" border="0" usemap="#class_c_list_a402b8e568cd9a9f25a511c1eefd12c09_cgraph" alt=""/></div>
+<map name="class_c_list_a402b8e568cd9a9f25a511c1eefd12c09_cgraph" id="class_c_list_a402b8e568cd9a9f25a511c1eefd12c09_cgraph">
+<area shape="rect" title=" " alt="" coords="5,219,149,248"/>
+<area shape="rect" href="class_c___program.html#af7d01ee17677a85643fde2c9506b612c" title=" " alt="" coords="200,5,379,35"/>
+<area shape="rect" href="class_c___program.html#aa4b56d0ff0b46ff3455c557adc2722f6" title=" " alt="" coords="204,59,375,88"/>
+<area shape="rect" href="class_c___program.html#ae8e9f4799817f31736f9e496cbca692f" title=" " alt="" coords="197,112,381,141"/>
+<area shape="rect" href="class_c___program.html#a4c4371f5d6a0da93321647a432caab9a" title=" " alt="" coords="203,165,375,195"/>
+<area shape="rect" href="class_c_list.html#a8a5a711d30ef7a16260ef5d4041e95b5" title=" " alt="" coords="217,219,362,248"/>
+<area shape="rect" href="class_c___program.html#a3b4231c75132f78b63e10c5c63951b72" title=" " alt="" coords="201,272,377,301"/>
+<area shape="rect" href="class_c___program.html#a10d7c2efddfae0c80de6abd4fc41ac3c" title=" " alt="" coords="207,325,372,355"/>
+<area shape="rect" href="class_c___program.html#abccae9277a34642cbb5a52bafd1fca99" title=" " alt="" coords="205,379,374,408"/>
+<area shape="rect" href="class_c___program.html#a238a2fb27df21ca08a85aee0d61497d4" title=" " alt="" coords="206,432,373,461"/>
+<area shape="rect" href="class_c_author.html#a891a8c504fa138e9a83c49674190ad92" title=" " alt="" coords="429,5,584,35"/>
+<area shape="rect" href="class_c_date.html#a33c54197a9cbf71d017fc12778fefc59" title=" " alt="" coords="441,432,572,461"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa8e2900d4ccca6724ce51da219544013"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8e2900d4ccca6724ce51da219544013">&#9670;&nbsp;</a></span>setListSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CList::setListSize </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>size</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1fc3c4545877f04774e1e283cc902c37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fc3c4545877f04774e1e283cc902c37">&#9670;&nbsp;</a></span>showOneEl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CList::showOneEl </td>
+          <td>(</td>
+          <td class="paramtype">stringstream &amp;&#160;</td>
+          <td class="paramname"><em>line</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7d1444ffcafc969a82d30e3855ca03b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d1444ffcafc969a82d30e3855ca03b4">&#9670;&nbsp;</a></span>sort()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CList::sort </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="program_8h.html#a27226d579a1e813b298284345d2c3f4f">comp</a>&#160;</td>
+          <td class="paramname"><em>condition</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Граф всіх викликів цієї функції:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_list_a7d1444ffcafc969a82d30e3855ca03b4_cgraph.png" border="0" usemap="#class_c_list_a7d1444ffcafc969a82d30e3855ca03b4_cgraph" alt=""/></div>
+<map name="class_c_list_a7d1444ffcafc969a82d30e3855ca03b4_cgraph" id="class_c_list_a7d1444ffcafc969a82d30e3855ca03b4_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,99,35"/>
+<area shape="rect" href="class_c_list.html#a8a5a711d30ef7a16260ef5d4041e95b5" title=" " alt="" coords="147,5,292,35"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a08553fcc092fd6c63a6af647403d8676"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08553fcc092fd6c63a6af647403d8676">&#9670;&nbsp;</a></span>sortAsc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CList::sortAsc </td>
+          <td>(</td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a70e04dfd790e1611c5024da6b1aaa325"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70e04dfd790e1611c5024da6b1aaa325">&#9670;&nbsp;</a></span>sortDesc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CList::sortDesc </td>
+          <td>(</td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a83b61e2329868a071b56adb811a4e404"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83b61e2329868a071b56adb811a4e404">&#9670;&nbsp;</a></span>task()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CList::task </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>minimalSize</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Граф всіх викликів цієї функції:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_list_a83b61e2329868a071b56adb811a4e404_cgraph.png" border="0" usemap="#class_c_list_a83b61e2329868a071b56adb811a4e404_cgraph" alt=""/></div>
+<map name="class_c_list_a83b61e2329868a071b56adb811a4e404_cgraph" id="class_c_list_a83b61e2329868a071b56adb811a4e404_cgraph">
+<area shape="rect" title=" " alt="" coords="5,192,101,221"/>
+<area shape="rect" href="class_c_list.html#ab41616f89921a91b64f0bd4afc1c2115" title=" " alt="" coords="149,192,289,221"/>
+<area shape="rect" href="class_c___program.html#af7d01ee17677a85643fde2c9506b612c" title=" " alt="" coords="340,5,519,35"/>
+<area shape="rect" href="class_c___program.html#aa4b56d0ff0b46ff3455c557adc2722f6" title=" " alt="" coords="344,59,515,88"/>
+<area shape="rect" href="class_c___program.html#ae8e9f4799817f31736f9e496cbca692f" title=" " alt="" coords="337,112,521,141"/>
+<area shape="rect" href="class_c___program.html#a4c4371f5d6a0da93321647a432caab9a" title=" " alt="" coords="343,165,515,195"/>
+<area shape="rect" href="class_c___program.html#a3b4231c75132f78b63e10c5c63951b72" title=" " alt="" coords="341,219,517,248"/>
+<area shape="rect" href="class_c___program.html#a10d7c2efddfae0c80de6abd4fc41ac3c" title=" " alt="" coords="347,272,512,301"/>
+<area shape="rect" href="class_c___program.html#abccae9277a34642cbb5a52bafd1fca99" title=" " alt="" coords="345,325,514,355"/>
+<area shape="rect" href="class_c___program.html#a238a2fb27df21ca08a85aee0d61497d4" title=" " alt="" coords="346,379,513,408"/>
+<area shape="rect" href="class_c_author.html#a891a8c504fa138e9a83c49674190ad92" title=" " alt="" coords="569,5,724,35"/>
+<area shape="rect" href="class_c_date.html#a33c54197a9cbf71d017fc12778fefc59" title=" " alt="" coords="581,379,712,408"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Компонентні дані</h2>
+<a id="a8127fd5691a4f745e831d729e6175a66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8127fd5691a4f745e831d729e6175a66">&#9670;&nbsp;</a></span>list</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_c___program.html">C_Program</a>* CList::list</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5b0c113a11ea4783cb2a007c1ca47e6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b0c113a11ea4783cb2a007c1ca47e6d">&#9670;&nbsp;</a></span>listSize</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CList::listSize</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>Документація цих класів була створена з файлів:<ul>
+<li><a class="el" href="program_list_8h_source.html">programList.h</a></li>
+<li><a class="el" href="program_list_8cpp.html">programList.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Створено системою &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>
