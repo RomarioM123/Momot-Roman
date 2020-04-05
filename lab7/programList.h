@@ -8,7 +8,6 @@ private:
 	C_Program** programList;
 
 public:
-	void setListSize(int);
 	int getListSize() const;
 	
 	C_Program** createList(int, CAuthor*);

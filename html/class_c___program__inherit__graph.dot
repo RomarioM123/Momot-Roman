@@ -1,9 +1,0 @@
-digraph "C_Program"
-{
- // LATEX_PDF_SIZE
-  edge [fontname="Helvetica",fontsize="12",labelfontname="Helvetica",labelfontsize="12"];
-  node [fontname="Helvetica",fontsize="12",shape=record];
-  Node1 [label="{C_Program\n|# timeOfWork\l# size\l# amountOfLines\l# index\l# useInternet\l# name\l# author\l# date\l|+ getTime()\l+ getSize()\l+ getLines()\l+ getIndex()\l+ getInternet()\l+ getName()\l+ getDay()\l+ getMonth()\l+ getYear()\l+ getAuthor()\lі ще  14...\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
-  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="12",style="solid",arrowtail="onormal",fontname="Helvetica"];
-  Node2 [label="{CMalware\n|- type\l|+ getType()\l+ setType()\l+ CMalware()\l+ CMalware()\l+ CMalware()\l+ ~CMalware()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_c_malware.html",tooltip=" "];
-}

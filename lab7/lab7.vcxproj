@@ -43,7 +43,6 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="data.txt" />
-    <Text Include="dataM.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

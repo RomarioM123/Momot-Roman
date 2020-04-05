@@ -64,8 +64,5 @@
     <Text Include="data.txt">
       <Filter>Файлы ресурсов</Filter>
     </Text>
-    <Text Include="dataM.txt">
-      <Filter>Файлы ресурсов</Filter>
-    </Text>
   </ItemGroup>
 </Project>

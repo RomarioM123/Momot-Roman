@@ -1,5 +1,4 @@
 #include "programList.h"
-#include "malwareList.h"
 
 void menu();
 
@@ -211,7 +210,12 @@ void menu()
 			cout << endl;
 
 			result = list.getProgramID(value, programList);
-			if (result == -1) break;
+			if (result == -5)
+			{
+				cout << "Ёлемент с таким ID отсутствует." << endl;
+				break;
+			}
+			
 			programList = list.delProgram(result, programList);
 
 			break;
