@@ -1,18 +1,5 @@
 #include "date.h"
 
-//void CDate::setDay(sint day)
-//{
-//	this->day = day;
-//}
-//void CDate::setMonth(sint month)
-//{
-//	this->month = month;
-//}
-//void CDate::setYear(sint year)
-//{
-//	this->year = year;
-//}
-
 sint CDate::getDay() const
 {
 	return day;

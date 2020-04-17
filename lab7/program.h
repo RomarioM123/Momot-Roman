@@ -62,17 +62,6 @@ public:
 	virtual stringstream getStr() const = 0;
 	virtual void writeInFile(ofstream&) = 0;
 
-	/*void setTime(const int);
-	void setSize(const int);
-	void setLines(const int);
-	void setIndex(const int);
-	void setInternet(const bool);
-	void setName(const string);
-	void setDay(const sint);
-	void setMonth(const sint);
-	void setYear(const sint);
-	void setAuthor(const string);*/
-
 	C_Program();
 	C_Program(bool, int, int, int, int, string, CAuthor, sint, sint, sint);
 	C_Program(const C_Program& other);

@@ -1,0 +1,5 @@
+  Время     Размер      Строки       Интернет   Индекс         Название                Год выпуска     Автор         Тип/Цена    
+1 )0         0           0        false       65         Basic                     1999          IBM         Exploit       
+2 )121       222         532      true        1234       Skype                     2002          Lambda      3000          
+3 )1445      532         745      true        7896       Spider                    1995          AMD         Keylogger     
+4 )333       444         555      false       6745       Calculator                2001          Logitech    200           

@@ -41,46 +41,6 @@ string C_Program::getAuthor() const
 	return author.getAuthor(); 
 }
 
-//void C_Program::setTime(const int valueTime) 
-//{ 
-//	timeOfWork = valueTime;
-//}
-//void C_Program::setSize(const int valueSize) 
-//{ 
-//	size = valueSize; 
-//}
-//void C_Program::setLines(const int valueLines) 
-//{ 
-//	amountOfLines = valueLines; 
-//}
-//void C_Program::setInternet(const bool internetStatus) 
-//{ 
-//	useInternet = internetStatus; 
-//}
-//void C_Program::setIndex(const int valueIndex) 
-//{ 
-//	index = valueIndex; 
-//}
-//void C_Program::setName(const string valueName) 
-//{ 
-//	name = valueName; 
-//}
-//void C_Program::setDay(const sint valueDay) 
-//{ 
-//	date.setDay(valueDay); 
-//}
-//void C_Program::setMonth(const sint valueMonth) 
-//{ 
-//	date.setMonth(valueMonth); 
-//}
-//void C_Program::setYear(const sint valueYear) 
-//{ 
-//	date.setYear(valueYear);
-//}
-//void C_Program::setAuthor(const string valueAuthor) 
-//{ 
-//	author.setAuthor(valueAuthor); 
-//}
 
 C_Program::C_Program(bool internet, int time, int size, int lines, int index, string name, CAuthor author, sint day, sint month, sint year): useInternet(internet), timeOfWork(time), size(size), amountOfLines(lines), index(index), name(name), author(author), date(day, month, year)
 {
