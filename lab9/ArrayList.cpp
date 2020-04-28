@@ -1,16 +1,5 @@
 #include "ArrayList.h"
-int ArrayList::getListSize() const
-{
-	return listSize;
-}
-
-void ArrayList::createArr()
-{
-	listSize = 1;
-	arrayList = new Array[1];
-	task = new int[1];
-}
-bool ArrayList::ReadFile(string filename, int value)
+void ArrayList::ReadFile(string filename)
 {
 	ifstream file;
 	file.exceptions(ifstream::badbit | ifstream::failbit);
@@ -18,38 +7,38 @@ bool ArrayList::ReadFile(string filename, int value)
 	int arrAmount;				//количество массивов в файле
 	int arrLength;				//длинна массива
 	int intTemp;
-	int fullSize = 0;			//общее кол-во элементов в файле
-	int value2 = 0;
-	int* newArray;				//новый массив элементов
+	int count = 0;
 	size_t i, j;
 
 	try
 	{
 		file.open(filename);
-		if (!file)				//проверка на открытие файла
-		{
-			throw "Ошибка открытия файла.";
-		}
-		
+
 		getline(file, line);
-		istringstream temp(line);
-		temp >> arrAmount;
-		if (arrAmount <= 0 || arrAmount != (LinesInFile(filename) - 1))	//проверка на правильное кол-во эл-ов в массиве
+		arrAmount = std::stoi(line);
+		if (arrAmount <= 0 || arrAmount != (LinesInFile(filename) - 1))	//проверка на правильное кол-во массивов
 		{
 			throw "Неверное количество массивов в файле.";
 		}
 
-		while (!file.eof())		//нахождение максимального кол-ва элементов
+		for (i = 0; i < arrAmount; i++)		//проверка правильности массивов в файле
 		{
 			getline(file, line);
 			istringstream temp(line);
 			temp >> arrLength;
-			if (arrLength > 0) fullSize += arrLength;
+			
+			if (std::count(line.begin(), line.end(), ' ') != arrLength || arrLength == 0)
+			{
+				arrAmount--;
+				i--;
+			}
 		}
-		newArray = new int[fullSize];			//выделение памяти для нового массива
+		arrayList = new Array[arrAmount];		//выделяем память под массив массивов
 
-		file.seekg(0, file.beg);
+		file.clear();							//очищаем поток
+		file.seekg(0, std::ios_base::beg);		//возвращаем указатель в начало файла
 		getline(file, line);
+		arrAmount = std::stoi(line);
 
 		for (i = 0; i < arrAmount; i++)
 		{
@@ -68,12 +57,14 @@ bool ArrayList::ReadFile(string filename, int value)
 					throw exception("Пустой массив данных.");
 				}
 
-				for (j = 0; j < arrLength; j++)
+				arrayList[i].array = new int[arrLength + 1];
+				arrayList[i].array[0] = arrLength;
+
+				for (j = 1; j <= arrLength; j++)
 				{
 					temp >> intTemp;
-					newArray[j + value2] = intTemp;
+					arrayList[i].array[j] = intTemp;
 				}
-				value2 = value2 + j;
 			}
 			catch (const exception & ex)
 			{
@@ -86,14 +77,12 @@ bool ArrayList::ReadFile(string filename, int value)
 	catch (const char* error)
 	{
 		cout << error << endl;
-		return NULL;
+		file.close();
+		return;
 	}
 	
 	file.close();
-
-	newArray = (int*)realloc(newArray, sizeof(int) * value2);
-	arrayList[value].array = new int[value2];
-	arrayList[value].array = newArray;
+	listSize = arrAmount;
 }
 int ArrayList::LinesInFile(string filename) const
 {
@@ -109,62 +98,55 @@ int ArrayList::LinesInFile(string filename) const
 	fin.close();
 	return size;
 }
-void ArrayList::OutputArr(int value) const
+void ArrayList::OutputArr() const
 {
-	int arrSize = _msize(arrayList[value].array) / sizeof(int);
-
-	cout << endl << "Количество элементов в массиве: " << arrSize << endl;
-	for (size_t i = 0; i < arrSize; i++)
+	cout << endl << "Элементы в массиве: " << endl;
+	for (size_t i = 0; i < listSize; i++)
 	{
-		cout << arrayList[value].array[i] << " ";
+		cout << arrayList[i].array[0];
+		
+		cout << "    ";
+		for (size_t j = 1; j <= arrayList[i].array[0]; j++)
+		{
+			cout << arrayList[i].array[j] << " ";
+		}
+		cout << endl;
 	}
 	cout << endl;
 }
-void ArrayList::Task(int value)
+void ArrayList::Task()
 {
-	int arrSize = _msize(arrayList[value].array) / sizeof(int);	//размер массива
-	int amountOfEl = 0;											//количество элементов
-	int sum = 0;												//сумма элементов
-	int* temp = new int[value + 1];								//временная переменная массива индиввидуального задания
+	float sum = 0;									//сумма элементов
+	task = new float[listSize];
 
-	for (size_t i = 0; i < value; i++)
+	cout << "Средние значения массивов: " << endl;
+	for (size_t i = 0; i < listSize; i++)
 	{
-		temp[i] = task[i];
-	}
-	delete[] task;
+		for (size_t j = 1; j <= arrayList[i].array[0]; j++)
+		{
+			sum += arrayList[i].array[j];
+		}
+		task[i] = sum / arrayList[i].array[0];
+		cout << task[i] << endl;
 
-	for (size_t i = 0; i < arrSize; i++)
-	{
-		sum += arrayList[value].array[i];
-		amountOfEl++;
+		sum = 0;
 	}
-
-	task = new int[value + 1];
-	for (size_t i = 0; i < value+1; i++)
-	{
-		task[i] = temp[i];
-	}
-	task[value] = sum / amountOfEl;
-	cout << "Среднее значение элементов: " << task[value] << endl;
 }
-void ArrayList::SaveToFile(string filename, int value) const
-{
+void ArrayList::SaveToFile(string filename) const
+{	
 	try
 	{
 		ofstream fout(filename);
 		fout.exceptions(ifstream::badbit | ifstream::failbit);
 
-		if (!fout.is_open())				//проверка на открытие файла
+		for (size_t i = 0; i < listSize; i++)
 		{
-			throw "Ошибка открытия файла.";
-		}
-
-		for (size_t i = 0; i < value+1; i++)
-		{
-			fout << task[i] << " ";
+			fout << task[i] << endl;
 		}
 
 		fout.close();
+
+		cout << "Данный в файл записаны." << endl;
 	}
 	catch (const char* error)
 	{
@@ -172,16 +154,38 @@ void ArrayList::SaveToFile(string filename, int value) const
 		return;
 	}
 }
-
-ArrayList::~ArrayList()
+void ArrayList::DeleteArr()
 {
-	
-	for (size_t i = 0; i < (_msize(task) / sizeof(int)); i++)
+	for (size_t i = 0; i < listSize; i++)
 	{
 		delete arrayList[i].array;
-		//arrayList[i].~Array();
 	}
-	
-	//delete[] arrayList;
+	delete[] arrayList;
 	delete[] task;
 }
+void ArrayList::CheckArr(int Arr, int Element)
+{
+	try
+	{
+		if (Arr > listSize || Arr <= 0)
+		{
+			throw exception("Неверный номер массива.");
+		}
+		else if (Element > arrayList[Arr-1].array[0])
+		{
+			throw exception("Неверный номер элемента.");
+		}
+		else
+		{
+			cout << "Элемент: " << arrayList[Arr-1].array[Element] << endl;
+		}
+	}
+	catch (const exception& ex)
+	{
+		cout << ex.what() << endl;
+		return;
+	}
+		
+}
+
+ArrayList::~ArrayList() {}

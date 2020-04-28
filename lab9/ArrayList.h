@@ -6,21 +6,16 @@ class ArrayList
 private:
 	int listSize;		//размер динамического массива
 	Array* arrayList;	//динамический массив массивов
-	int* task;			//массив средних значений элементов
+	float* task;		//массив средних значений элементов
 
 public:
-	int getListSize() const;
-
-	void createArr();
-	bool ReadFile(string, int);
+	void ReadFile(string);
 	int LinesInFile(string) const;
-	void OutputArr(int) const;
-	void Task(int);
-	void SaveToFile(string, int) const;
-
-	/*Array& operator[](const int);
-    ArrayList& operator=(ArrayList&);*/
-
+	void OutputArr() const;
+	void Task();
+	void SaveToFile(string) const;
+	void DeleteArr();
+	void CheckArr(int, int);
 
 	~ArrayList();
 };

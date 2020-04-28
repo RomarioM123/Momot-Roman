@@ -140,7 +140,7 @@
   <ItemGroup>
     <ClCompile Include="Array.cpp" />
     <ClCompile Include="ArrayList.cpp" />
-    <ClCompile Include="Source.cpp" />
+    <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="data.txt" />

@@ -28,14 +28,7 @@ public:
 	int* array;
 
 public:
-	int& operator[](int);
-	Array& operator=(int[]);
-	friend ostream& operator<< (ostream&, const Array&);
-	//Array& operator=(int&);
-	//void resize(std::size_t);
-
 	Array();
-	Array(const Array& other);
 	~Array();
 };
 
