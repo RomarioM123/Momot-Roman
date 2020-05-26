@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CGTask: Текст програми programList.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">CGTask
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Створено системою Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','Пошук');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">programList.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="program_list_8h.html">Див. документацію.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="program_for_sale_8h.html">programForSale.h</a>&quot;</span>     </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="malware_8h.html">malware.h</a>&quot;</span>            </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_functor_8h.html">Functor.h</a>&quot;</span>            </div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_c_list.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_c_list.html">CList</a> {                   </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_c_list.html#a8dcd84da3c4e86038121299076074e82">   16</a></span>&#160;    vector &lt;unique_ptr&lt;CProgram&gt;&gt; <a class="code" href="class_c_list.html#a8dcd84da3c4e86038121299076074e82">programList</a>;  </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_c_list.html#a07d28c55cc2c38054e2b17c49d6f6436">PrintList</a>() const noexcept;    </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_c_list.html#ae831431508e39fa092f68e118ef725e6">Task</a>(<span class="keywordtype">int</span>) const;                </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_c_list.html#a0189de2aaee5dc7d215a63a388751e2e">AddProgram</a>(<span class="keywordtype">int</span>);                </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_c_list.html#a43a2858eec765b844a8ba98d000b168b">DeleteProgram</a>(<span class="keywordtype">int</span>);             </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_c_list.html#a27f48183195e2592e581848c4a88432e">Sort</a>(<a class="code" href="class_functor.html">Functor</a>&amp;) noexcept;       </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_c_list.html#a8abd36536d836f7917e2ce06356953e2">SaveFile</a>(<span class="keywordtype">string</span>) const;         </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_c_list.html#a249d4b04d59ca3f899e742320441cb3d">ReadFile</a>(<span class="keywordtype">string</span>);               </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_c_list.html#ae9c044f98ed8fb6c9407d46904db3838">GetIndex</a>(<span class="keywordtype">int</span>) const;            </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="class_c_list.html">CList</a>();                            </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    ~<a class="code" href="class_c_list.html">CList</a>();                           </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;};</div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_c_malware_html"><div class="ttname"><a href="class_c_malware.html">CMalware</a></div><div class="ttdoc">Підключення файлу program.h.</div><div class="ttdef"><b>Definition:</b> malware.h:11</div></div>
+<div class="ttc" id="aclass_c_list_html_ae6434f79bc2d54fbd3617214a313af97"><div class="ttname"><a href="class_c_list.html#ae6434f79bc2d54fbd3617214a313af97">CList::CList</a></div><div class="ttdeci">CList()</div><div class="ttdoc">Оголошення методу отримання індекса за номером</div><div class="ttdef"><b>Definition:</b> programList.cpp:15</div></div>
+<div class="ttc" id="a_functor_8h_html"><div class="ttname"><a href="_functor_8h.html">Functor.h</a></div></div>
+<div class="ttc" id="aclass_c_list_html_a34a40e8ab96400a4ec186b29de56da5a"><div class="ttname"><a href="class_c_list.html#a34a40e8ab96400a4ec186b29de56da5a">CList::~CList</a></div><div class="ttdeci">~CList()</div><div class="ttdoc">Оголошення конструктора за замовчуванням</div><div class="ttdef"><b>Definition:</b> programList.cpp:11</div></div>
+<div class="ttc" id="aclass_c_list_html_a27f48183195e2592e581848c4a88432e"><div class="ttname"><a href="class_c_list.html#a27f48183195e2592e581848c4a88432e">CList::Sort</a></div><div class="ttdeci">void Sort(Functor &amp;) noexcept</div><div class="ttdoc">Оголошення методу видалення програми зі списку</div><div class="ttdef"><b>Definition:</b> programList.cpp:133</div></div>
+<div class="ttc" id="aclass_c_list_html_a0189de2aaee5dc7d215a63a388751e2e"><div class="ttname"><a href="class_c_list.html#a0189de2aaee5dc7d215a63a388751e2e">CList::AddProgram</a></div><div class="ttdeci">int AddProgram(int)</div><div class="ttdoc">Оголошення методу виконання індивідуального завднання</div><div class="ttdef"><b>Definition:</b> programList.cpp:77</div></div>
+<div class="ttc" id="amalware_8h_html"><div class="ttname"><a href="malware_8h.html">malware.h</a></div></div>
+<div class="ttc" id="aclass_c_list_html_ae9c044f98ed8fb6c9407d46904db3838"><div class="ttname"><a href="class_c_list.html#ae9c044f98ed8fb6c9407d46904db3838">CList::GetIndex</a></div><div class="ttdeci">int GetIndex(int) const</div><div class="ttdoc">Оголошення методу виводу списку у консоль</div><div class="ttdef"><b>Definition:</b> programList.cpp:219</div></div>
+<div class="ttc" id="aclass_c_list_html_a8abd36536d836f7917e2ce06356953e2"><div class="ttname"><a href="class_c_list.html#a8abd36536d836f7917e2ce06356953e2">CList::SaveFile</a></div><div class="ttdeci">int SaveFile(string) const</div><div class="ttdoc">Оголошення методу сортування даних</div><div class="ttdef"><b>Definition:</b> programList.cpp:137</div></div>
+<div class="ttc" id="aclass_c_list_html"><div class="ttname"><a href="class_c_list.html">CList</a></div><div class="ttdoc">Підключення файлу programForSale.h.</div><div class="ttdef"><b>Definition:</b> programList.h:14</div></div>
+<div class="ttc" id="aclass_c_list_html_a249d4b04d59ca3f899e742320441cb3d"><div class="ttname"><a href="class_c_list.html#a249d4b04d59ca3f899e742320441cb3d">CList::ReadFile</a></div><div class="ttdeci">int ReadFile(string)</div><div class="ttdoc">Оголошення методу виведення даних у файл</div><div class="ttdef"><b>Definition:</b> programList.cpp:163</div></div>
+<div class="ttc" id="aprogram_list_8h_html"><div class="ttname"><a href="program_list_8h.html">programList.h</a></div></div>
+<div class="ttc" id="aclass_c_program_for_sale_html"><div class="ttname"><a href="class_c_program_for_sale.html">CProgramForSale</a></div><div class="ttdoc">Підключення файлу program.h.</div><div class="ttdef"><b>Definition:</b> programForSale.h:11</div></div>
+<div class="ttc" id="aclass_c_program_html"><div class="ttname"><a href="class_c_program.html">CProgram</a></div><div class="ttdef"><b>Definition:</b> program.h:53</div></div>
+<div class="ttc" id="aclass_functor_html"><div class="ttname"><a href="class_functor.html">Functor</a></div><div class="ttdoc">Підключення файлу program.h.</div><div class="ttdef"><b>Definition:</b> Functor.h:12</div></div>
+<div class="ttc" id="aclass_c_list_html_a07d28c55cc2c38054e2b17c49d6f6436"><div class="ttname"><a href="class_c_list.html#a07d28c55cc2c38054e2b17c49d6f6436">CList::PrintList</a></div><div class="ttdeci">void PrintList() const noexcept</div><div class="ttdoc">Контейнер для зберігання елементів</div><div class="ttdef"><b>Definition:</b> programList.cpp:31</div></div>
+<div class="ttc" id="aclass_c_list_html_a8dcd84da3c4e86038121299076074e82"><div class="ttname"><a href="class_c_list.html#a8dcd84da3c4e86038121299076074e82">CList::programList</a></div><div class="ttdeci">vector&lt; unique_ptr&lt; CProgram &gt; &gt; programList</div><div class="ttdoc">Оголошення класу-контролера</div><div class="ttdef"><b>Definition:</b> programList.h:16</div></div>
+<div class="ttc" id="aprogram_for_sale_8h_html"><div class="ttname"><a href="program_for_sale_8h.html">programForSale.h</a></div></div>
+<div class="ttc" id="aclass_c_list_html_a43a2858eec765b844a8ba98d000b168b"><div class="ttname"><a href="class_c_list.html#a43a2858eec765b844a8ba98d000b168b">CList::DeleteProgram</a></div><div class="ttdeci">int DeleteProgram(int)</div><div class="ttdoc">Оголошення методу додавання нового елемента у список</div><div class="ttdef"><b>Definition:</b> programList.cpp:99</div></div>
+<div class="ttc" id="aclass_c_list_html_ae831431508e39fa092f68e118ef725e6"><div class="ttname"><a href="class_c_list.html#ae831431508e39fa092f68e118ef725e6">CList::Task</a></div><div class="ttdeci">int Task(int) const</div><div class="ttdoc">Оголошення методу виводу списку у консоль</div><div class="ttdef"><b>Definition:</b> programList.cpp:59</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Створено системою &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

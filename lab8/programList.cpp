@@ -492,5 +492,6 @@ CList::~CList()
 
 CProgram* CList::operator[] (int i)
 {
-	if (listSize > i)return programList[i];
+	if (listSize > i)
+		return programList[i];
 }

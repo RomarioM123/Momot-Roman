@@ -1,4 +1,6 @@
 #include "ArrayList.h"
+
+#include <cassert>
 void ArrayList::ReadFile(string filename)
 {
 	ifstream file;

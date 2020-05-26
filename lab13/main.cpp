@@ -1,5 +1,3 @@
-#include "Header.h"
-#include "program.h"
 #include "malware.h"
 
 CProgram* newProgram(int);

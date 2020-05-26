@@ -1,0 +1,10 @@
+  Время     Размер      Строки    Интернет   Индекс        Название         Тип/Цена      
+1 . 8800      555         35       true        35634      BestMalware         Exploit       
+2 . 423       20          654      false       53453      Calculator      
+3 . 345       789         423      false       67456      MoneyStealer        99999         
+4 . 200       200         200      false       65         Basic               Trojan        
+5 . 222       333         444      false       14212      Notepad             Exploit       
+6 . 666       666         666      true        666        Photoshop           8800555       
+7 . 4523      756         4213     false       8579       TheBattleship       Adware        
+8 . 125       234         1236     true        5322       Minecraft       
+9 . 200       200         200      false       65         Basic               Trojan        
