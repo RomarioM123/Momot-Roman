@@ -38,7 +38,6 @@ public:
 		return object;
 	}
 	
-	SmartPointer();
 	SmartPointer(T* object) : object{ object }, pointerCount{ new PointerCount() }
 	{
 		pointerCount->Increment();
