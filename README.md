@@ -12,7 +12,8 @@
 <strong>Лабораторная работа 11:</strong> сдано на <strong>5</strong> с отчётом<br>
 <strong>Лабораторная работа 12:</strong> сдано на <strong>5</strong> с отчётом<br>
 <strong>Лабораторная работа 13:</strong> сдано на <strong>5</strong> с отчётом<br>
-<strong>Лабораторная работа 14:</strong> сдано на <strong>5</strong><br>
-<strong>Лабораторная работа 15:</strong> сдано на <strong>5</strong><br>
-
-<strong>РГЗ:</strong> сдано на <strong>5</strong><br>
+<strong>Лабораторная работа 14:</strong> сдано на <strong>5</strong> с отчётом<br>
+<strong>Лабораторная работа 15:</strong> сдано на <strong>5</strong> с отчётом<br>
+<strong>Лабораторная работа 16:</strong> сдано на <strong>5</strong> с отчётом<br>
+<strong>Лабораторная работа 17:</strong> сдано на <strong>5</strong> с отчётом<br>
+<strong>РГЗ:</strong> сдано на <strong>5</strong> с отчётом<br>
