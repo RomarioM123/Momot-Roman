@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cereal>
+	<Literature size="dynamic">
+		<value0>
+			<polymorphic_id>2147483649</polymorphic_id>
+			<polymorphic_name>CMalware</polymorphic_name>
+			<ptr_wrapper>
+				<id>2147483649</id>
+				<data>
+					<value0>
+						<Name>Calculator</Name>
+						<Time of work>1980</Time of work>
+						<Size of program>220</Size of program>
+						<Index>345001</Index>
+						<Amount of code lines>523</Amount of code lines>
+					</value0>
+					<Type of malware>Trojan</Type of malware>
+				</data>
+			</ptr_wrapper>
+		</value0>
+		<value1>
+			<polymorphic_id>1073741824</polymorphic_id>
+			<ptr_wrapper>
+				<id>2147483650</id>
+				<data>
+					<Name>Biology</Name>
+					<Time of work>1989</Time of work>
+					<Size of program>367</Size of program>
+					<Index>234655</Index>
+					<Amount of code lines>423</Amount of code lines>
+				</data>
+			</ptr_wrapper>
+		</value1>
+		<value2>
+			<polymorphic_id>1</polymorphic_id>
+			<ptr_wrapper>
+				<id>2147483651</id>
+				<data>
+					<value0>
+						<Name>Physics</Name>
+						<Time of work>1970</Time of work>
+						<Size of program>500</Size of program>
+						<Index>434322</Index>
+						<Amount of code lines>4231</Amount of code lines>
+					</value0>
+					<Type of malware>Worm</Type of malware>
+				</data>
+			</ptr_wrapper>
+		</value2>
+		<value3>
+			<polymorphic_id>1073741824</polymorphic_id>
+			<ptr_wrapper>
+				<id>2147483652</id>
+				<data>
+					<Name>Turkmen</Name>
+					<Time of work>2010</Time of work>
+					<Size of program>422</Size of program>
+					<Index>353535</Index>
+					<Amount of code lines>645</Amount of code lines>
+				</data>
+			</ptr_wrapper>
+		</value3>
+	</Literature>
+</cereal>
+

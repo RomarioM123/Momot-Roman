@@ -1,0 +1,5 @@
+Title           Year     Pages        index     Type      amountOfLines/Chapters
+1) Calculator   1980      220       345001       e        e         
+2) Biology      1989      367       234655       e        
+3) Physics      1970      500       434322       p        p         
+4) Turkmen      2010      422       353535       p        

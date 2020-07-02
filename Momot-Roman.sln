@@ -37,6 +37,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CGTask", "CGTask\CGTask.vcx
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lab16", "lab16\lab16.vcxproj", "{13A99D78-746D-4E2A-A185-924CE165AA39}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lab17", "lab17\lab17.vcxproj", "{0E48CA05-A0D7-4A94-A0F2-C31580DAF8F8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -251,6 +253,18 @@ Global
 		{13A99D78-746D-4E2A-A185-924CE165AA39}.Test|x64.Build.0 = Release|x64
 		{13A99D78-746D-4E2A-A185-924CE165AA39}.Test|x86.ActiveCfg = Release|Win32
 		{13A99D78-746D-4E2A-A185-924CE165AA39}.Test|x86.Build.0 = Release|Win32
+		{0E48CA05-A0D7-4A94-A0F2-C31580DAF8F8}.Debug|x64.ActiveCfg = Debug|x64
+		{0E48CA05-A0D7-4A94-A0F2-C31580DAF8F8}.Debug|x64.Build.0 = Debug|x64
+		{0E48CA05-A0D7-4A94-A0F2-C31580DAF8F8}.Debug|x86.ActiveCfg = Debug|Win32
+		{0E48CA05-A0D7-4A94-A0F2-C31580DAF8F8}.Debug|x86.Build.0 = Debug|Win32
+		{0E48CA05-A0D7-4A94-A0F2-C31580DAF8F8}.Release|x64.ActiveCfg = Release|x64
+		{0E48CA05-A0D7-4A94-A0F2-C31580DAF8F8}.Release|x64.Build.0 = Release|x64
+		{0E48CA05-A0D7-4A94-A0F2-C31580DAF8F8}.Release|x86.ActiveCfg = Release|Win32
+		{0E48CA05-A0D7-4A94-A0F2-C31580DAF8F8}.Release|x86.Build.0 = Release|Win32
+		{0E48CA05-A0D7-4A94-A0F2-C31580DAF8F8}.Test|x64.ActiveCfg = Release|x64
+		{0E48CA05-A0D7-4A94-A0F2-C31580DAF8F8}.Test|x64.Build.0 = Release|x64
+		{0E48CA05-A0D7-4A94-A0F2-C31580DAF8F8}.Test|x86.ActiveCfg = Release|Win32
+		{0E48CA05-A0D7-4A94-A0F2-C31580DAF8F8}.Test|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
